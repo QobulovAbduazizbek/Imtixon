@@ -3,7 +3,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import MainLayout from './layouts/MainLayout'
 import PortfolioLayout from './layouts/PortfolioLayout'
 import Home from './pages/Home'
-import Kompaniya from './pages/kompaniya'
+import Kompaniya from './pages/Kompaniya'
 import Galareya from './pages/Galareya'
   import Portfolio from './pages/Portfolio'
   import PortfolioDetail from '../src/pages/PortfolioDetail'
