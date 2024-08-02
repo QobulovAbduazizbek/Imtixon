@@ -157,8 +157,8 @@ const Home = () => {
 <div>
 
 <div className='w-full max-w-[1400px] mx-auto mt-10'>
-  <h3 className='text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] xl:text-[70px] 2xl:text-[80px] font-bold mt-24 text-center'>Проекты домов</h3>
-  <p className='text-[14px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px] 2xl:text-[26px] text-center mb-10'>
+  <h3 className='text-[24px] sm:text-[30px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[54px] font-bold mt-24 text-center'>Проекты домов</h3>
+  <p className='text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] text-center mb-10'>
     Мы разработали более 1000 проектов комфортных домов
   </p>
   <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14'>
@@ -166,19 +166,19 @@ const Home = () => {
       <Link key={project.id} to={'BizningLoiha'}>
         <li className='bg-gray-50'>
           <a href="#" className="group w-full m-2 sm:m-3 md:m-4 lg:m-5 xl:m-6 2xl:m-7 h-[250px] sm:h-[300px] overflow-hidden relative inline-block cursor-pointer mx-auto">
-            <img className='w-[500px] h-full object-cover transition-transform duration-500 group-hover:scale-110' src={project.img} alt="Logo" />
+            <img className='w-[300px] h-full md:w-[400px] object-cover transition-transform duration-500 group-hover:scale-110' src={project.img} alt="Logo" />
           </a>
-          <h2 className='text-center text-[20px] sm:text-[22px] md:text-[24px] lg:text-[27px] xl:text-[30px] 2xl:text-[32px] mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-7 mt-2 sm:mt-3 md:mt-4 lg:mt-5 xl:mt-6 2xl:mt-7 font-bold hover:text-green-600'>{project.title}</h2>
-          <p className='ml-5 sm:ml-6 md:ml-7 lg:ml-8 xl:ml-9 2xl:ml-10 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px] mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 2xl:mb-6 text-gray-600'>
+          <h2 className='text-center text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] xl:text-[26px] 2xl:text-[28px] mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-7 mt-2 sm:mt-3 md:mt-4 lg:mt-5 xl:mt-6 2xl:mt-7 font-bold hover:text-green-600'>{project.title}</h2>
+          <p className='ml-5 sm:ml-6 md:ml-7 lg:ml-8 xl:ml-9 2xl:ml-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 2xl:mb-6 text-gray-600'>
             Площадь: <span className='ml-28 sm:ml-32 md:ml-36 lg:ml-40 xl:ml-44 2xl:ml-48'>{project.area}</span>
           </p>
-          <p className='ml-5 sm:ml-6 md:ml-7 lg:ml-8 xl:ml-9 2xl:ml-10 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px] mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 2xl:mb-6 text-gray-600'>
+          <p className='ml-5 sm:ml-6 md:ml-7 lg:ml-8 xl:ml-9 2xl:ml-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 2xl:mb-6 text-gray-600'>
             Размер: <span className='ml-24 sm:ml-28 md:ml-32 lg:ml-36 xl:ml-40 2xl:ml-44'>{project.size}</span>
           </p>
-          <p className='ml-5 sm:ml-6 md:ml-7 lg:ml-8 xl:ml-9 2xl:ml-10 text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px] mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 2xl:mb-6 text-gray-600'>
-            Кол-во комнат: <span className='ml-20 sm:ml-24 md:ml-28 lg:ml-32 xl:ml-36 2xl:ml-40'>{project.rooms}</span>
+          <p className='ml-5 sm:ml-6 md:ml-7 lg:ml-8 xl:ml-9 2xl:ml-10 text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 2xl:mb-6 text-gray-600'>
+            Кол-во комнат: <span className='ml-10 sm:ml-12 md:ml-14 lg:ml-16 xl:ml-18 2xl:ml-20'>{project.rooms}</span>
           </p>
-          <h3 className='text-center mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-7 text-[20px] sm:text-[22px] md:text-[24px] lg:text-[25px] xl:text-[27px] 2xl:text-[29px]'>{project.price}</h3>
+          <h3 className='text-center mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-7 text-[18px] sm:text-[20px] md:text-[22px] lg:text-[23px] xl:text-[25px] 2xl:text-[27px]'>{project.price}</h3>
         </li>
       </Link>
     ))}
@@ -186,26 +186,28 @@ const Home = () => {
 </div>
 
 
-<div className='w-full max-w-base  mx-auto pb-20 '>
-  <h3 className='text-[40px] sm:text-[60px] font-bold mt-24 text-center '>
-  Проекты домов
-  </h3>
-  <p className='text-[18px] sm:[22px] text-center mb-10'>Мы разработали более 1000 проектов комфортных домов</p>
-  <LightGallery
-            speed={500}
-            plugins={[lgThumbnail, lgShare, lgRotate, lgVideo, lgAutoplay, lgZoom]}
-            elementClassNames="grid grid-cols-2 gap-4 md:gap-9 pb-14"
-          >
-            {renderGallery()}
-          </LightGallery>
-  
-  
-</div>
+
+
+<div className='w-full max-w-[1400px] mx-auto pb-20'>
+      <h3 className='text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center'>
+        Проекты домов
+      </h3>
+      <p className='text-[14px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center mb-10'>
+        Мы разработали более 1000 проектов комфортных домов
+      </p>
+      <LightGallery
+        speed={500}
+        plugins={[lgThumbnail, lgShare, lgRotate, lgVideo, lgAutoplay, lgZoom]}
+        elementClassNames="grid grid-cols-1 sm:grid-cols-1   md:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10"
+      >
+        {renderGallery()}
+      </LightGallery>
+    </div>
 
 <div className='bg-[#fafafa]'>
   <div className='w-full max-w-base  mx-auto pb-20 '>
     <div className='text-center'>
-      <h3 className='text-[40px] sm:[50px] font-bold text-center pt-10 mb-5'>Типы возводимых домов</h3>
+      <h3 className='text-[30px] sm:[50px] font-bold text-center pt-10 mb-5'>Типы возводимых домов</h3>
       <p className='text-[20px] sm:[25px] mb-7'>Красивые дома для комфортного проживания</p>
     </div>
     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-10">
@@ -339,7 +341,7 @@ const Home = () => {
     </div>
 <div className='bg-[#fdfdfd]'>
   <div className='w-full max-w-base  mx-auto px-10 py-20'>
-    <h3 className='text-center font-bold text-[40px] sm:text-[60px]'>Преимущества загородного дома</h3>
+    <h3 className='text-center font-bold text-[30px] sm:text-[60px]'>Преимущества загородного дома</h3>
     <p className='text-center text-[20px] mb-10'>Ощутите прелесть загородной жизни</p>
     <ul className='grid grid-cols-1 gap-5 md:grid-cols-2 md:grid-rows-2'>
       <li className='bg-[#fafafa] text-center '>
@@ -440,17 +442,17 @@ const Home = () => {
     <di className='flex flex-col md:flex-row items-start justify-between'>
       <div className="md:mr-10 mb-10 md:mb-0">
         <ul>
-          <h3 className='text-[50px] font-bold text-white mb-3'>                
+          <h3 className='text-[45px] sm:text-[25px] font-bold text-white mb-3'>                
 Остались вопросы?</h3>
           <p className='text-[15px] font-medium text-[#868686] mb-5'>
           Свяжитесь с нами или оставьте заявку <br />
 и мы проконсультируем вас по любому вопросу</p>
           <div className='flex items-center'>
-            <p className='text-[30px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
+            <p className='text-[18px] sm:text-[25px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
             <img className='w-16' src={Telegram} alt="" />
           </div>
           <div className='flex items-center'>
-            <p className='text-[30px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
+            <p className='text-[18px] sm:text-[25px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
             <img className='w-16' src={wh} alt="" />
           </div>
           <Link className='text-[#45ca39] text-[16px]'>test@example.com</Link>
@@ -460,11 +462,11 @@ const Home = () => {
       <div>
         <ul>
           <li>
-            <p className='text-[50px] font-bold text-white mb-3'>Мы ответим в удобное для <br /> вас время</p>
+            <p className='text-[45px] sm:text-[25px] font-bold text-white mb-3'>Мы ответим в удобное для <br /> вас время</p>
             <p className='text-[15px] font-medium text-[#868686] mb-5'>Оставьте заявку на звонок прямо сейчас</p>
           </li>
           <li className='mb-5'>
-            <input type="text" placeholder='Ваше имя' className='py-[20px] pr-[50px] pl-5 rounded-lg text-black font-medium mr-6' />
+            <input type="text" placeholder='Ваше имя' className='py-[20px] pr-[50px] mb-5 sm:mb-0 pl-5 rounded-lg text-black font-medium mr-6' />
             <input type="text" placeholder='+7 (___) ___ __ __' className='py-[20px] pr-[50px] pl-5 rounded-lg text-black font-medium' />
           </li>
           <li>

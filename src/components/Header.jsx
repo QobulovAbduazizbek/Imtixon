@@ -55,17 +55,19 @@ const Header = () => {
 
   return (
     <div>
-      <header className="py-5 bg-[#fafafa]">
-        <div className="w-full max-w-base px-4 md:px-12 mx-auto flex justify-between items-center">
+          <header className="py-5 bg-[#fafafa]">
+      <div className="w-full max-w-base px-4 md:px-12 mx-auto flex items-center relative">
+        {/* Menu Button and Links */}
+        <div className="flex-grow flex items-center space-x-5">
           <button>
-            <div onMouseMove={handleOpen} onMouseLeave={handleClose}>
-              <Link>
+            <div onMouseMove={handleOpen} onMouseLeave={handleClose} className="relative">
+              <Link to="/projects">
                 <span className="py-3 px-5 border-2 border-green-500 hover:bg-[#79c701] hover:text-white duration-700 text-black rounded-md font-medium text-[16px] md:text-[20px]">
                   Проекты
                 </span>
               </Link>
               {down && (
-                <div onMouseMove={handleOpen} onMouseLeave={handleClose} className="z-10 absolute left-4 md:left-16 top-[68px] py-5 px-5 rounded-md bg-[#fff]">
+                <div onMouseMove={handleOpen} onMouseLeave={handleClose} className="absolute left-0 top-full mt-2 py-5 px-5 rounded-md bg-[#fff] shadow-lg z-10">
                   <ul className="text-start">
                     <li>
                       <Link to={'/ToshUy'} className="text-[16px] md:text-[20px] text-black font-medium hover:text-[#79c701]">
@@ -125,22 +127,22 @@ const Header = () => {
               )}
             </div>
           </button>
-          <ul className="hidden md:flex">
+          <ul className="hidden lg:flex space-x-5">
             <li>
               <Link to={'/'}>
-                <span className="text-black font-normal text-[16px] mr-5 lg:mr-10 hover:text-[#79c701] duration-300">Главная</span>
+                <span className="text-black font-normal text-[16px] hover:text-[#79c701] duration-300">Главная</span>
               </Link>
             </li>
-            <li onMouseMove={birOpen} onMouseLeave={birClose}>
+            <li onMouseMove={birOpen} onMouseLeave={birClose} className="relative">
               <Link to={'/Kompaniya'} className="flex items-center">
                 <span className="text-black font-normal text-[16px] hover:text-[#79c701] duration-300">О компании</span>
-                <img className='w-4 h-4 md:w-6 md:h-5 bg-gray-200 ml-2 md:ml-3 mr-5 lg:mr-10' src={Arrowd} alt="" style={{ padding: '5px', borderRadius: '4px' }} />
+                <img className='w-4 h-4 md:w-6 md:h-5 bg-gray-200 ml-2 md:ml-3' src={Arrowd} alt="" style={{ padding: '5px', borderRadius: '4px' }} />
               </Link>
               {bir && (
-                <div onMouseMove={birOpen} onMouseLeave={birClose} className="z-10 absolute left-4 md:left-70 top-[55px] py-5 pr-10 pl-3 rounded-md bg-[#fff]">
+                <div onMouseMove={birOpen} onMouseLeave={birClose} className="absolute left-0 top-full mt-2 py-5 pr-10 pl-3 rounded-md bg-[#fff] shadow-lg z-10">
                   <ul className="text-start">
                     <li>
-                      <Link to={'/BizHaqimizda'} className="text-[16px] text-[#a19f9f] font-medium ml-[400px] hover:text-[#79c701]">
+                      <Link to={'/BizHaqimizda'} className="text-[16px] text-[#a19f9f] font-medium hover:text-[#79c701]">
                         Отзывы о нас
                       </Link>
                     </li>
@@ -150,59 +152,62 @@ const Header = () => {
             </li>
             <li>
               <Link to={'/BizningLoiha'}>
-                <span className="text-black font-normal text-[16px] mr-5 lg:mr-10 hover:text-[#79c701] duration-300">Наши проекты</span>
+                <span className="text-black font-normal text-[16px] hover:text-[#79c701] duration-300">Наши проекты</span>
               </Link>
             </li>
             <li>
               <Link to={'/Galareya'}>
-                <span className="text-black font-normal text-[16px] mr-5 lg:mr-10 hover:text-[#79c701] duration-300">Фотогалерея</span>
+                <span className="text-black font-normal text-[16px] hover:text-[#79c701] duration-300">Фотогалерея</span>
               </Link>
             </li>
             <li>
               <Link to={'/Aksiya'}>
-                <span className="text-black font-normal text-[16px] mr-5 lg:mr-10 hover:text-[#79c701] duration-300">Акции</span>
+                <span className="text-black font-normal text-[16px] hover:text-[#79c701] duration-300">Акции</span>
               </Link>
             </li>
             <li>
               <Link to={'/Maqolalar'}>
-                <span className="text-black font-normal text-[16px] mr-5 lg:mr-10 hover:text-[#79c701] duration-300">Статьи</span>
+                <span className="text-black font-normal text-[16px] hover:text-[#79c701] duration-300">Статьи</span>
               </Link>
             </li>
             <li>
-              <Link to={'/Kontakt'} className="text-black font-normal text-[16px] mr-5 lg:mr-10 hover:text-[#79c701] duration-300">Контакты</Link>
+              <Link to={'/Kontakt'} className="text-black font-normal text-[16px] hover:text-[#79c701] duration-300">Контакты</Link>
             </li>
           </ul>
-          <div className="md:hidden">
-            <Popover placement="bottom-end">
-              <PopoverHandler>
-                <Button>
-                  <div className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-3 rounded-lg">
-                    <span className="font-medium">Меню</span>
-                  </div>
-                </Button>
-              </PopoverHandler>
-              <PopoverContent className="w-64">
-                <div className="flex flex-col p-5">
-                  <Link to={'/'} className="mb-2 hover:text-[#79c701] duration-300">Главная</Link>
-                  <Link to={'/Kompaniya'} className="mb-2 hover:text-[#79c701] duration-300">О компании</Link>
-                  <Link to={'/BizningLoiha'} className="mb-2 hover:text-[#79c701] duration-300">Наши проекты</Link>
-                  <Link to={'/Galareya'} className="mb-2 hover:text-[#79c701] duration-300">Фотогалерея</Link>
-                  <Link to={'/Aksiya'} className="mb-2 hover:text-[#79c701] duration-300">Акции</Link>
-                  <Link to={'/Maqolalar'} className="mb-2 hover:text-[#79c701] duration-300">Статьи</Link>
-                  <Link to={'/Kontakt'} className="hover:text-[#79c701] duration-300">Контакты</Link>
-                </div>
-              </PopoverContent>
-            </Popover>
-          </div>
-          <div className="hidden md:block">
-            <Link>
-              <div className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-3 rounded-lg">
-                <span onClick={() => setModal(true)} className="font-medium">Расчёт стоимости</span>
-              </div>
-            </Link>
-          </div>
         </div>
-      </header>
+        {/* Call-to-Action Button */}
+        <div className="ml-auto hidden lg:block">
+          <Link>
+            <div className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-3 rounded-lg">
+              <span onClick={() => setModal(true)} className="font-medium">Расчёт стоимости</span>
+            </div>
+          </Link>
+        </div>
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <Popover placement="bottom-end">
+            <PopoverHandler>
+              <Button>
+                <div className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-3 rounded-lg">
+                  <span className="font-medium">Меню</span>
+                </div>
+              </Button>
+            </PopoverHandler>
+            <PopoverContent className="w-64 z-50">
+              <div className="flex flex-col p-5">
+                <Link to={'/'} className="mb-2 hover:text-[#79c701] duration-300">Главная</Link>
+                <Link to={'/Kompaniya'} className="mb-2 hover:text-[#79c701] duration-300">О компании</Link>
+                <Link to={'/BizningLoiha'} className="mb-2 hover:text-[#79c701] duration-300">Наши проекты</Link>
+                <Link to={'/Galareya'} className="mb-2 hover:text-[#79c701] duration-300">Фотогалерея</Link>
+                <Link to={'/Aksiya'} className="mb-2 hover:text-[#79c701] duration-300">Акции</Link>
+                <Link to={'/Maqolalar'} className="mb-2 hover:text-[#79c701] duration-300">Статьи</Link>
+                <Link to={'/Kontakt'} className="hover:text-[#79c701] duration-300">Контакты</Link>
+              </div>
+            </PopoverContent>
+          </Popover>
+        </div>
+      </div>
+    </header>
       <div className="bg-white text-black">
         <div className='w-full max-w-base px-4 md:px-12 mx-auto py-5'>
           <div className='flex flex-col md:flex-row justify-between items-center'>
