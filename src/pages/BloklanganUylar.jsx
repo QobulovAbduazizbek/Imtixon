@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Ichki_2 from '../img/Ichki_2.webp';
+import PageWrapper from '../components/PageWrapper';
 
 const BloklanganUylar = () => {
   return (
+    <PageWrapper>
     <div className='w-full max-w-base pt-12 pb-14 my-12 mx-auto  px-4 md:px-10'>
       <div className="flex items-center mb-5">
         <Link to={'/'} className="text-[#6cd16c] text-[16px]">
@@ -51,6 +53,7 @@ const BloklanganUylar = () => {
         </div>
       </div>
     </div>
+    </PageWrapper>
   );
 };
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import PageWrapper from '../components/PageWrapper';
 
 const FoydalanishSharti = () => {
   return (
+    <PageWrapper>
     <div className='w-full max-w-base py-6 md:py-12 px-4 md:px-10 mx-auto'>
       <div className='flex flex-col md:flex-row items-center justify-between pt-6 md:pt-10 mb-4 md:mb-7'>
         <div className='flex items-center mb-4 md:mb-0'>
@@ -32,6 +34,7 @@ const FoydalanishSharti = () => {
         </p>
       </div>
     </div>
+    </PageWrapper>
   );
 };
 

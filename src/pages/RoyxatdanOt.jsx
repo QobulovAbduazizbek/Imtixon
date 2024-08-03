@@ -4,6 +4,7 @@ import Button from '../img/Button.png';
 import Telegram from '../img/Telegram.png';
 import wh from '../img/wh.png';
 import vk from '../img/vk.png';
+import PageWrapper from '../components/PageWrapper';
 
 const Registration = () => {
     // Holatlarni yaratish
@@ -44,6 +45,7 @@ const Registration = () => {
     };
 
     return (
+        <PageWrapper>
         <div className='w-full max-w-base py-12 px-5 mx-auto'>
             <div className='flex flex-col items-center'>
                 <div className='flex items-center mb-7'>
@@ -113,6 +115,7 @@ const Registration = () => {
                 {errorMessage && <p className="mt-4 text-red-600">{errorMessage}</p>}
             </div>
         </div>
+        </PageWrapper>
     );
 };
 

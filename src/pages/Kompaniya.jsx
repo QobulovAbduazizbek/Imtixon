@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import K_1 from '../img/K_1.webp'
+import PageWrapper from '../components/PageWrapper';
 
 const Kompaniya = () => {
   return (
+    <PageWrapper>
     <div className='bg-[#fafafa]'>
       <div className='w-full max-w-base px-12 mx-auto py-5 '>
         <div className='flex items-center mb- pt-10'>
@@ -39,6 +41,7 @@ const Kompaniya = () => {
         </ul>
       </div>
     </div>
+    </PageWrapper>
   )
 }
 

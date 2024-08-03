@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import Telegram from '../img/Telegram.png'
 import wh from '../img/wh.png'
 import yandex from '../img/yandex.png'
+import PageWrapper from '../components/PageWrapper';
 
 const Kontakt = () => {
     return (
+        <PageWrapper>
         <div className='bg-[#fafafa]'>
             <div className='w-full max-w-base pt-12 py-16 px-10 mx-auto'>
                 <div className='flex items-center pt-10 mb-7'>
@@ -57,6 +59,7 @@ const Kontakt = () => {
                 </div>
             </div>
         </div>
+        </PageWrapper>
     )
 }
 

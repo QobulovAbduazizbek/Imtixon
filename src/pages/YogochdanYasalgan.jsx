@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Ichki_4 from '../img/Ichki_4.webp';
+import PageWrapper from '../components/PageWrapper';
 
 const YogochdanYasalgan = () => {
   return (
+    <PageWrapper>
     <div className='w-full max-w-base pt-12 pb-14 my-12 mx-auto'>
       <div className="flex items-center mb-5">
         <Link to={'/'} className="text-[#6cd16c] text-[16px]"> <u>Главная</u></Link>
@@ -23,6 +25,7 @@ const YogochdanYasalgan = () => {
       </div>
       {/* Qolgan kodlar */}
     </div>
+    </PageWrapper>
   );
 }
 

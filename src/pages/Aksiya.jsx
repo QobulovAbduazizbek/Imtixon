@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import S_1 from '../img/S_1.webp';
 import S_2 from '../img/S_2.webp';
 import { useState } from 'react';
+import PageWrapper from '../components/PageWrapper';
 
 const Aksiya = () => {
     const [modal, setModal] = useState(false);
@@ -17,6 +18,7 @@ const Aksiya = () => {
     document.addEventListener('keydown', clickEscape);
 
     return (
+        <PageWrapper>
         <div>
             <div className='w-full max-w-7xl pt-12 pb-[100px] px-4 sm:px-6 lg:px-8 mx-auto'>
                 <div className='flex items-center pt-10 mb-7'>
@@ -75,6 +77,7 @@ const Aksiya = () => {
                 )
             }
         </div>
+        </PageWrapper>
     );
 }
 

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { projects } from "../data";
 import Arrowd from '../img/Arrowd.png'
+import PageWrapper from "../components/PageWrapper";
 
 const PortfolioDetail = () => {
   const { title } = useParams();
@@ -12,6 +13,7 @@ const PortfolioDetail = () => {
   });
 
   return (
+    <PageWrapper>
     <div className="w-full max-w-base mx-auto pt-20 pb-10 px-5">
       <div className="mb-5">
         <Link to={'/'} className="text-[#6cd16c] text-sm"> <u>Главная</u></Link>
@@ -26,6 +28,7 @@ const PortfolioDetail = () => {
         <p className="text-[#555454] text-sm lg:text-base">{projectItem.text}</p>
       </div>
     </div>
+    </PageWrapper>
   );
 };
 

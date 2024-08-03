@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageWrapper from '../components/PageWrapper';
 
 const QurilishniKechiktirish = () => {
   return (
+    <PageWrapper>
     <div className="w-full max-w-base pt-12 pb-10 px-5 mx-auto">
       <div className="mb-7">
         <Link to={'/'} className="text-[#6cd16c] text-sm">
@@ -20,6 +22,7 @@ const QurilishniKechiktirish = () => {
       </h3>
       <p className="text-gray-400 text-sm lg:text-base">Дата публикации: 07.06.2022</p>
     </div>
+    </PageWrapper>
   );
 };
 

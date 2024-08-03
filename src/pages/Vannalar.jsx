@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import Ichki_7 from '../img/Ichki_7.webp'
+import PageWrapper from '../components/PageWrapper';
 
 const Baths = () => {
     return (
+        <PageWrapper>
         <div>
             <div className='w-full max-w-base pt-6 md:pt-12 pb-8 md:pb-14 my-6 md:my-12 mx-auto'>
                 <div className="flex flex-col md:flex-row items-center mb-3 md:mb-5">
@@ -33,6 +35,7 @@ const Baths = () => {
                 </div>
             </div>
         </div>
+        </PageWrapper>
     )
 }
 

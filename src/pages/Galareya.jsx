@@ -19,6 +19,7 @@ import lgAutoplay from "lightgallery/plugins/autoplay";
 import lgVideo from "lightgallery/plugins/video";
 import lgShare from "lightgallery/plugins/share";
 import lgRotate from "lightgallery/plugins/rotate";
+import PageWrapper from "../components/PageWrapper";
 
 const Galareya = () => {
   const images = [grid_1, grid_2, grid_3, grid_4, grid_2, u_2];
@@ -36,6 +37,7 @@ const Galareya = () => {
   };
 
   return (
+    <PageWrapper>
     <div className="bg-[#fAfafa]">
       <div className="w-full max-w-base px-4 md:px-12 mx-auto py-5">
         <div className="flex items-center pt-10 mb-7">
@@ -59,6 +61,7 @@ const Galareya = () => {
         </div>
       </div>
     </div>
+    </PageWrapper>
   );
 };
 

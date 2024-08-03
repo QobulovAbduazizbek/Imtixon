@@ -4,6 +4,7 @@ import Button from '../img/Button.png';
 import Telegram from '../img/Telegram.png';
 import wh from '../img/wh.png';
 import vk from '../img/vk.png';
+import PageWrapper from '../components/PageWrapper';
 
 const SignUp = () => {
     // Holatlarni yaratish
@@ -38,6 +39,7 @@ const SignUp = () => {
     };
 
     return (
+        <PageWrapper>
         <div>
             <div className='w-full max-w-base py-8 px-5 md:px-10 mx-auto'>
                 <div className='flex items-center mb-4 md:mb-0'>
@@ -110,6 +112,7 @@ const SignUp = () => {
                 </div>
             </div>
         </div>
+        </PageWrapper>
     );
 };
 

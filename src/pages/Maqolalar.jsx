@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import grid_2 from '../img/grid_2.webp';
 import grid_5 from '../img/grid_5.webp';
 import grid_3 from '../img/grid_3.webp';
+import PageWrapper from '../components/PageWrapper';
 
 const Maqolalar = () => {
   return (
+    <PageWrapper>
     <div className='bg-white'>
       <div className='w-full max-w-screen-xl mx-auto pt-12 pb-5 px-5'>
         <div className='w-full max-w-screen-xl mx-auto pt-12 pb-[100px] px-5'>
@@ -60,6 +62,7 @@ const Maqolalar = () => {
         </ul>
       </div>
     </div>
+    </PageWrapper>
   );
 };
 

@@ -42,6 +42,7 @@ import "swiper/css/navigation";
 
 
 import { Parallax, Pagination, Navigation } from "swiper/modules";
+import PageWrapper from "../components/PageWrapper";
 
 const Home = () => {
   const [formData, setFormData] = useState({
@@ -140,6 +141,7 @@ const Home = () => {
   };
   document.addEventListener("keydown", clickEscape);
   return (
+    <PageWrapper>
     <div className="bg-[#ffffff]">
      <Swiper
         parallax={true}
@@ -626,6 +628,7 @@ const Home = () => {
 
 
     </div>
+    </PageWrapper>
   );
 };
 

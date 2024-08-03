@@ -9,12 +9,14 @@ import Ichki_6 from '../img/Ichki_6.webp';
 import Ichki_7 from '../img/Ichki_7.webp';
 import Ichki_8 from '../img/Ichki_8.webp';
 import Ichki_9 from '../img/Ichki_9.webp';
+import PageWrapper from '../components/PageWrapper';
 
 const BizningLoiha = () => {
     useEffect(() => {
         window.scroll(0 , 0);
     }, [])
     return (
+        <PageWrapper>
         <div>
             <div className='w-full max-w-base py-12 px-4 md:px-10 mx-auto'>
                 <div className='flex items-center pt-10 mb-7'>
@@ -139,6 +141,7 @@ const BizningLoiha = () => {
                 </ul>
             </div>
         </div>
+        </PageWrapper>
     );
 };
 

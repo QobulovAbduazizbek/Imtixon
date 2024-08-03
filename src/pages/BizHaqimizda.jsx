@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Togo_1 from '../img/Togo_1.webp';
 import Togo_2 from '../img/Togo_2.webp';
 import Hola_1 from '../img/Hola_1.webp';
+import PageWrapper from '../components/PageWrapper';
 
 const BizHaqimizda = () => {
   const [modal, setModal] = useState(false);
@@ -63,6 +64,7 @@ const BizHaqimizda = () => {
   };
 
   return (
+    <PageWrapper>
     <div>
       <div className='w-full max-w-base pt-12 pb-16 md:pb-[100px] px-5 md:px-10 mx-auto'>
         <div className='flex items-center pt-10 mb-7'>
@@ -145,6 +147,7 @@ const BizHaqimizda = () => {
         </div>
       )}
     </div>
+    </PageWrapper>
   );
 }
 

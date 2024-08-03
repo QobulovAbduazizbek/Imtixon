@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import Ichki_8 from '../img/Ichki_8.webp'
+import PageWrapper from '../components/PageWrapper';
 
 const Gazebos = () => {
   return (
+    <PageWrapper>
     <div>
     <dir className='w-full max-w-base pt-12 pb-14 my-12 mx-auto'>
     <div className="flex items-center mb-5">
@@ -39,6 +41,7 @@ const Gazebos = () => {
      </div>
       </dir>
     </div>
+    </PageWrapper>
   )
 }
 
