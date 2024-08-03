@@ -32,7 +32,7 @@ const Kontakt = () => {
                         </div>
                     </div>
                     <div>
-                        <iframe className='w-full lg:w-[785px] h-[400px]' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=635&amp;height=484&amp;hl=en&amp;q=Maskva%20Moscow+()&amp;t=k&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href='https://google-map-generator.com/'>Maps Generator</a>
+                        <iframe className='w-full sm:w-[600px] lg:w-[785px] h-[400px]' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=635&amp;height=484&amp;hl=en&amp;q=Maskva%20Moscow+()&amp;t=k&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href='https://google-map-generator.com/'>Maps Generator</a>
                     </div>
                 </div>
                 <div>

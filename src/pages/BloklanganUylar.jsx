@@ -4,7 +4,7 @@ import Ichki_2 from '../img/Ichki_2.webp';
 
 const BloklanganUylar = () => {
   return (
-    <div className='w-full max-w-base pt-12 pb-14 my-12 mx-auto px-4 md:px-10'>
+    <div className='w-full max-w-base pt-12 pb-14 my-12 mx-auto  px-4 md:px-10'>
       <div className="flex items-center mb-5">
         <Link to={'/'} className="text-[#6cd16c] text-[16px]">
           <u>Главная</u>
@@ -19,7 +19,7 @@ const BloklanganUylar = () => {
         </h3>
         <div className='flex flex-col lg:flex-row items-start justify-between'>
           <div className='w-full lg:w-1/2 mb-5 lg:mb-0'>
-            <img className='w-full h-auto object-cover' src={Ichki_2} alt="Блочные дома" />
+            <img className='w-[500px]  h-auto object-cover ' src={Ichki_2} alt="Блочные дома" />
           </div>
           <div className='w-full lg:w-1/2'>
             <p className='text-[14px] md:text-[17px] text-[#6b6a6a] font-medium mb-3'>
