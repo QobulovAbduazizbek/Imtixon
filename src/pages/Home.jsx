@@ -34,6 +34,7 @@ import lgShare from "lightgallery/plugins/share";
 import lgRotate from "lightgallery/plugins/rotate";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import HomeHero from "../components/HomeHero"
 
 // Import Swiper styles
 import "swiper/css";
@@ -263,103 +264,8 @@ const Home = () => {
   return (
     <PageWrapper>
       <div className="bg-[#ffffff]">
-      <Swiper
-      parallax={true}
-      pagination={{ clickable: true }}
-      loop={true}
-      navigation={true}
-      modules={[Parallax, Pagination, Navigation]}
-      className="mySwiper"
-      breakpoints={{
-        // when window width is >= 640px
-        640: {
-          slidesPerView: 1,
-        },
-        // when window width is >= 768px
-        768: {
-          slidesPerView: 1,
-        },
-        // when window width is >= 1024px
-        1024: {
-          slidesPerView: 1,
-        },
-      }}
-    >
-      <div className="relative w-full max-w-base px-4 sm:px-8 md:px-12 mx-auto md:py-5 py-3">
-        <SwiperSlide
-          className="bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url(https://mos-cottage-house.oml.ru/thumb/2/H_QkEI07sikBiaBXUYWQ0A/2000r1300/d/sl_2.jpg)",
-          }}
-        >
-          <div className="w-full max-w-[1450px] mx-auto py-2 sm:py-5 sm:px-5 px-1">
-            <div
-              className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
-              data-swiper-parallax="-300"
-            >
-              <p data-aos="fade-up">
-                Строительство <br /> загородных домов
-              </p>
-            </div>
-            <div
-              className="subtitle mb-6 sm:mb-8 md:mb-10"
-              data-swiper-parallax="-200"
-            >
-              <p data-aos="fade-up">Заселяйтесь в свой дом через 60 дней</p>
-            </div>
-            <div className="text" data-swiper-parallax="-100">
-              <Link
-                onClick={() => setModal(true)}
-                className="bg-[#79c701] px-4 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md"
-              >
-                Связаться с нами
-              </Link>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          className="bg-no-repeat"
-          style={{
-            backgroundImage:
-              "url(https://mos-cottage-house.oml.ru/thumb/2/H_QkEI07sikBiaBXUYWQ0A/2000r1300/d/sl_2.jpg)",
-          }}
-        >
-          <div className="w-full max-w-[1450px] mx-auto py-2 sm:py-5 sm:px-5 px-1">
-            <div
-              className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
-              data-swiper-parallax="-300"
-            >
-              <p data-aos="fade-up">
-                Теплый семейный дом <br /> с террасой за 30 дней
-              </p>
-            </div>
-            <div
-              className="subtitle mb-6 sm:mb-8 md:mb-10"
-              data-swiper-parallax="-200"
-            >
-              <p data-aos="fade-up">
-                Гарантия 5 лет с момента сдачи объекта
-              </p>
-            </div>
-            <div className="text" data-swiper-parallax="-100">
-              <Link
-                onClick={() => setModal(true)}
-                className="bg-[#79c701] px-4 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md"
-              >
-                Расчёт стоимости
-              </Link>
-            </div>
-          </div>
-        </SwiperSlide>
-      </div>
+      <HomeHero />
 
-      {/* Swiper navigation buttons */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 right-10 flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
-        <button className="swiper-button-prev w-11 h-11 bg-black bg-opacity-50 rounded-full text-white" />
-        <button className="swiper-button-next w-11 h-11 bg-black bg-opacity-50 rounded-full text-white" />
-      </div>
-    </Swiper>
         <div className="w-full max-w-[1450px] mx-auto"></div>
 
         <div>
@@ -709,7 +615,7 @@ const Home = () => {
             <div className="w-full max-w-base  mx-auto px-5 pt-14">
               <h3
                 data-aos="fade-up"
-                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10  text-center"
+                className="text-[40px] sm:text-[40px] text-white md:text-[50px] lg:text-[60px] font-bold mt-10  text-center"
               >
                 О компании
               </h3>
