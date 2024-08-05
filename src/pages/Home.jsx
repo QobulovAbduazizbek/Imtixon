@@ -231,10 +231,10 @@ const Home = () => {
         key={index}
         href={src}
         data-lg-size="1406-1390"
-        className="group w-full m-5 h-[500px] rounded-md overflow-hidden relative inline-block cursor-pointer mx-auto"
+        className="group w-full mb-3 h-[500px] rounded-md overflow-hidden relative inline-block cursor-pointer mx-auto"
       >
         <img
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full  object-cover transition-transform duration-500 group-hover:scale-110"
           src={src}
           alt=""
         />
@@ -263,88 +263,103 @@ const Home = () => {
   return (
     <PageWrapper>
       <div className="bg-[#ffffff]">
-        <Swiper
-          parallax={true}
-          pagination={{
-            clickable: true,
+      <Swiper
+      parallax={true}
+      pagination={{ clickable: true }}
+      loop={true}
+      navigation={true}
+      modules={[Parallax, Pagination, Navigation]}
+      className="mySwiper"
+      breakpoints={{
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 1,
+        },
+        // when window width is >= 768px
+        768: {
+          slidesPerView: 1,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 1,
+        },
+      }}
+    >
+      <div className="relative w-full max-w-base px-4 sm:px-8 md:px-12 mx-auto md:py-5 py-3">
+        <SwiperSlide
+          className="bg-no-repeat"
+          style={{
+            backgroundImage:
+              "url(https://mos-cottage-house.oml.ru/thumb/2/H_QkEI07sikBiaBXUYWQ0A/2000r1300/d/sl_2.jpg)",
           }}
-          loop={true}
-          navigation={true}
-          modules={[Parallax, Pagination, Navigation]}
-          className="mySwiper"
         >
-          <div className="relative w-full max-w-base px-4 sm:px-8 md:px-12 mx-auto md:py-5 py-3">
-            <SwiperSlide
-              style={{
-                "background-image":
-                  "url(https://mos-cottage-house.oml.ru/thumb/2/H_QkEI07sikBiaBXUYWQ0A/2000r1300/d/sl_2.jpg)",
-              }}
+          <div className="w-full max-w-[1450px] mx-auto py-2 sm:py-5 sm:px-5 px-1">
+            <div
+              className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
+              data-swiper-parallax="-300"
             >
-              <div className="w-full max-w-[1450px] mx-auto py-5 px-5">
-                <div
-                  className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
-                  data-swiper-parallax="-300"
-                >
-                  <p data-aos="fade-up">
-                    Строительство <br /> загородных домов
-                  </p>
-                </div>
-                <div
-                  className="subtitle mb-6 sm:mb-8 md:mb-10"
-                  data-swiper-parallax="-200"
-                >
-                  <p data-aos="fade-up">Заселяйтесь в свой дом через 60 дней</p>
-                </div>
-                <div className="text" data-swiper-parallax="-100">
-                  <Link
-                    onClick={() => setModal(true)}
-                    className="bg-[#79c701] px-4 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md"
-                  >
-                    Связаться с нами
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              style={{
-                "background-image":
-                  "url(https://mos-cottage-house.oml.ru/thumb/2/H_QkEI07sikBiaBXUYWQ0A/2000r1300/d/sl_2.jpg)",
-              }}
+              <p data-aos="fade-up">
+                Строительство <br /> загородных домов
+              </p>
+            </div>
+            <div
+              className="subtitle mb-6 sm:mb-8 md:mb-10"
+              data-swiper-parallax="-200"
             >
-              <div className="w-full max-w-[1450px] mx-auto py-5 px-5">
-                <div
-                  className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
-                  data-swiper-parallax="-300"
-                >
-                  <p data-aos="fade-up">
-                    Теплый семейный дом <br /> с террасой за 30 дней
-                  </p>
-                </div>
-                <div
-                  className="subtitle mb-6 sm:mb-8 md:mb-10"
-                  data-swiper-parallax="-200"
-                >
-                  <p data-aos="fade-up">
-                    Гарантия 5 лет с момента сдачи объекта
-                  </p>
-                </div>
-                <div className="text" data-swiper-parallax="-100">
-                  <Link
-                    onClick={() => setModal(true)}
-                    className="bg-[#79c701] px-4 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md"
-                  >
-                    Расчёт стоимости
-                  </Link>
-                </div>
-              </div>
-            </SwiperSlide>
-            {/* Swiper navigation buttons */}
-            <div className="absolute top-1/2 transform -translate-y-1/2 right-10 flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
-              <button className="swiper-button-prev w-11 h-11 bg-black bg-opacity-50 rounded-full text-white" />
-              <button className="swiper-button-next w-11 h-11 bg-black bg-opacity-50 rounded-full text-white" />
+              <p data-aos="fade-up">Заселяйтесь в свой дом через 60 дней</p>
+            </div>
+            <div className="text" data-swiper-parallax="-100">
+              <Link
+                onClick={() => setModal(true)}
+                className="bg-[#79c701] px-4 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md"
+              >
+                Связаться с нами
+              </Link>
             </div>
           </div>
-        </Swiper>
+        </SwiperSlide>
+        <SwiperSlide
+          className="bg-no-repeat"
+          style={{
+            backgroundImage:
+              "url(https://mos-cottage-house.oml.ru/thumb/2/H_QkEI07sikBiaBXUYWQ0A/2000r1300/d/sl_2.jpg)",
+          }}
+        >
+          <div className="w-full max-w-[1450px] mx-auto py-2 sm:py-5 sm:px-5 px-1">
+            <div
+              className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
+              data-swiper-parallax="-300"
+            >
+              <p data-aos="fade-up">
+                Теплый семейный дом <br /> с террасой за 30 дней
+              </p>
+            </div>
+            <div
+              className="subtitle mb-6 sm:mb-8 md:mb-10"
+              data-swiper-parallax="-200"
+            >
+              <p data-aos="fade-up">
+                Гарантия 5 лет с момента сдачи объекта
+              </p>
+            </div>
+            <div className="text" data-swiper-parallax="-100">
+              <Link
+                onClick={() => setModal(true)}
+                className="bg-[#79c701] px-4 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md"
+              >
+                Расчёт стоимости
+              </Link>
+            </div>
+          </div>
+        </SwiperSlide>
+      </div>
+
+      {/* Swiper navigation buttons */}
+      <div className="absolute top-1/2 transform -translate-y-1/2 right-10 flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+        <button className="swiper-button-prev w-11 h-11 bg-black bg-opacity-50 rounded-full text-white" />
+        <button className="swiper-button-next w-11 h-11 bg-black bg-opacity-50 rounded-full text-white" />
+      </div>
+    </Swiper>
         <div className="w-full max-w-[1450px] mx-auto"></div>
 
         <div>
@@ -353,13 +368,13 @@ const Home = () => {
           <div className="w-full max-w-[1400px] mx-auto px-5 pb-20">
             <h3
               data-aos="fade-up"
-              className="text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
+              className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
             >
               Проекты домов
             </h3>
             <p
               data-aos="fade-up"
-              className="text-[14px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center mb-10"
+              className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center sm:mb-7 md:mb-10 mb-4"
             >
               Мы разработали более 1000 проектов комфортных домов
             </p>
@@ -384,13 +399,13 @@ const Home = () => {
               <div className="text-center">
                 <h3
                   data-aos="fade-up"
-                  className="text-[30px] sm:text-[50px] font-bold text-center pt-10 mb-5"
+                  className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-20 text-center"
                 >
                   Типы возводимых домов
                 </h3>
                 <p
                   data-aos="fade-up"
-                  className="text-[20px] sm:text-[25px] mb-7"
+                  className="text-[16px] sm:text-[25px] mb-7"
                 >
                   Красивые дома для комфортного проживания
                 </p>
@@ -529,7 +544,7 @@ const Home = () => {
           <div className="w-full max-w-base mx-auto">
             <h3
               data-aos="fade-up"
-              className="text-[40px] sm:[50px] font-bold mt-24 text-center"
+              className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
             >
               Этапы работ
             </h3>
@@ -611,11 +626,11 @@ const Home = () => {
             <div className="w-full max-w-base  mx-auto px-10 py-20">
               <h3
                 data-aos="fade-up"
-                className="text-center font-bold text-[30px] sm:text-[60px]"
+                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
               >
                 Преимущества загородного дома
               </h3>
-              <p data-aos="fade-up" className="text-center text-[20px] mb-10">
+              <p data-aos="fade-up" className="text-center text-[16px] mb-10">
                 Ощутите прелесть загородной жизни
               </p>
               <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 md:grid-rows-2">
@@ -694,7 +709,7 @@ const Home = () => {
             <div className="w-full max-w-base  mx-auto px-5 pt-14">
               <h3
                 data-aos="fade-up"
-                className="text-center text-[30px] sm:[60px] font-bold text-white mb-10"
+                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold  text-center"
               >
                 О компании
               </h3>
@@ -823,34 +838,120 @@ const Home = () => {
             <div className="w-full max-w-base px-5 mx-auto items-center">
               <h3
                 data-aos="fade-up"
-                className="text-[50px] font-bold text-center py-10"
+                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
               >
                 Статьи
               </h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 mb-10">
-                {projects.map((project) => {
-                  return (
-                    <li key={project.id}>
-                      <Link to={"/QurilishniKechiktirish"}>
-                        <div className="bg-white pb-5 ">
-                          <img
-                            className="inline-block h-[300px] w-full rounded-lg "
-                            src={project.img}
-                            alt={project.title}
-                          />
-                          <h3
-                            data-aos="fade-up"
-                            className="py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500 "
-                          >
-                            {project.title}
-                          </h3>
-                          <p data-aos="fade-up">{project.text}</p>
-                        </div>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
+              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+      <li>
+        <Link to={"/Komfort"}>
+          <div className="bg-white pb-5">
+            <img
+              className="inline-block h-[300px] w-full rounded-lg"
+              src={projects[0].img}
+              alt={projects[0].title}
+            />
+            <h3
+              data-aos="fade-up"
+              className="py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500"
+            >
+              {projects[0].title}
+            </h3>
+            <p data-aos="fade-up">{projects[0].text}</p>
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to={"/Komfort2"}>
+          <div className="bg-white pb-5">
+            <img
+              className="inline-block h-[300px] w-full rounded-lg"
+              src={projects[1].img}
+              alt={projects[1].title}
+            />
+            <h3
+              data-aos="fade-up"
+              className="py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500"
+            >
+              {projects[1].title}
+            </h3>
+            <p data-aos="fade-up">{projects[1].text}</p>
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to={"/Komfort3"}>
+          <div className="bg-white pb-5">
+            <img
+              className="inline-block h-[300px] w-full rounded-lg"
+              src={projects[2].img}
+              alt={projects[2].title}
+            />
+            <h3
+              data-aos="fade-up"
+              className="py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500"
+            >
+              {projects[2].title}
+            </h3>
+            <p data-aos="fade-up">{projects[2].text}</p>
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to={"/Komfort4"}>
+          <div className="bg-white pb-5">
+            <img
+              className="inline-block h-[300px] w-full rounded-lg"
+              src={projects[3].img}
+              alt={projects[3].title}
+            />
+            <h3
+              data-aos="fade-up"
+              className="py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500"
+            >
+              {projects[3].title}
+            </h3>
+            <p data-aos="fade-up">{projects[3].text}</p>
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to={"/Komfort5"}>
+          <div className="bg-white pb-5">
+            <img
+              className="inline-block h-[300px] w-full rounded-lg"
+              src={projects[4].img}
+              alt={projects[4].title}
+            />
+            <h3
+              data-aos="fade-up"
+              className="py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500"
+            >
+              {projects[4].title}
+            </h3>
+            <p data-aos="fade-up">{projects[4].text}</p>
+          </div>
+        </Link>
+      </li>
+      <li>
+        <Link to={"/Komfort6"}>
+          <div className="bg-white pb-5">
+            <img
+              className="inline-block h-[300px] w-full rounded-lg"
+              src={projects[5].img}
+              alt={projects[5].title}
+            />
+            <h3
+              data-aos="fade-up"
+              className="py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500"
+            >
+              {projects[5].title}
+            </h3>
+            <p data-aos="fade-up">{projects[5].text}</p>
+          </div>
+        </Link>
+      </li>
+    </ul>
               <div className="text-center">
                 <Link to={"/Maqolalar"} className="text-[#45ca39] text-[20px]">
                   {" "}
@@ -868,13 +969,13 @@ const Home = () => {
                   <ul>
                     <h3
                       data-aos="fade-up"
-                      className="text-[25px] sm:text-[45px] font-bold text-white mb-3"
+                      className="text-[40px] text-white sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24"
                     >
                       Остались вопросы?
                     </h3>
                     <p
                       data-aos="fade-up"
-                      className="text-[15px] font-medium text-[#868686] mb-5"
+                      className="text-[18px] font-medium text-gray-300 mb-5"
                     >
                       Свяжитесь с нами или оставьте заявку <br />и мы
                       проконсультируем вас по любому вопросу

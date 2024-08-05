@@ -9,6 +9,7 @@ import {
   PopoverContent,
   Button,
 } from "@material-tailwind/react";
+import Dropdown1 from "./Dropdown1";
 
 const Header = () => {
   // Telegram bot
@@ -162,7 +163,7 @@ const Header = () => {
       <header className="py-5 bg-[#fafafa]">
         <div className="w-full max-w-base px-4 md:px-12 mx-auto flex items-center relative">
           <div className="flex-grow flex items-center justify-between space-x-5">
-            <button>
+            <Link to={'#'}>
               <div
                 onMouseMove={handleOpen}
                 onMouseLeave={handleClose}
@@ -264,7 +265,7 @@ const Header = () => {
                   </div>
                 )}
               </div>
-            </button>
+            </Link>
             <ul className="hidden lg:flex space-x-5 justify-center">
               <li>
                 <Link to={"/"}>
@@ -273,45 +274,8 @@ const Header = () => {
                   </span>
                 </Link>
               </li>
-              <li
-                onMouseMove={birOpen}
-                onMouseLeave={birClose}
-                className="relative"
-              >
-                <Link to={"/Kompaniya"} className="flex items-center">
-                  <span className="text-black font-normal xl:text-[16px] text-[13px] hover:text-[#79c701] duration-300">
-                    О компании
-                  </span>
-                  <img
-                    className="w-4 h-4 md:w-6 md:h-5 bg-gray-200 ml-2 md:ml-3"
-                    src={Arrowd}
-                    alt=""
-                    style={{ padding: "5px", borderRadius: "4px" }}
-                  />
-                </Link>
-                {bir && (
-                  <div
-                    onMouseMove={birOpen}
-                    onMouseLeave={birClose}
-                    className="absolute left-0 top-full px-5 mt-2 py-5 pr-10 pl-3 rounded-md bg-[#fff] shadow-lg z-10"
-                  >
-                    <ul className="text-center">
-                      <li>
-                        <Link
-                          to={"/BizHaqimizda"}
-                          className="text-[16px] text-[#a19f9f] font-medium hover:text-[#79c701]"
-                          style={{
-                            whiteSpace: "nowrap",
-                            overflow: "hidden",
-                            textOverflow: "ellipsis",
-                          }}
-                        >
-                          Отзывы о нас
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                )}
+              <li>
+                <Dropdown1/>
               </li>
               <li>
                 <Link to={"/BizningLoiha"}>
@@ -351,7 +315,7 @@ const Header = () => {
               </li>
             </ul>
             <div className="ml-auto hidden lg:block">
-              <Link>
+              <Link to={'#'}>
                 <div className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-3 rounded-lg">
                   <span onClick={() => setModal(true)} className="font-medium text-white">
                     Расчёт стоимости
