@@ -33,6 +33,8 @@ import Komfort3 from './pages/Komfort3'
 import Komfort4 from './pages/Komfort4'
 import Komfort5 from './pages/Komfort5'
 import Komfort6 from './pages/Komfort6'
+import Komfort7 from './pages/Komfort7'
+import Komfort8 from './pages/Komfort8'
 
 
 const App = () => {
@@ -69,6 +71,8 @@ const App = () => {
         <Route path='Komfort4' element={<Komfort4/>}/>
         <Route path='Komfort5' element={<Komfort5/>}/>
         <Route path='Komfort6' element={<Komfort6/>}/>
+        <Route path='Komfort7' element={<Komfort7/>}/>
+        <Route path='Komfort8' element={<Komfort8/>}/>
 
 
 

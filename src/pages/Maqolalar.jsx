@@ -23,7 +23,7 @@ const Maqolalar = () => {
           {/* 1 */}
           <li className='py-5 px-6 bg-gray-200'>
             <p className='mb-1 text-gray-400'>07.06.2022</p>
-            <Link to={'/QurilishniKechiktirish'}>
+            <Link to={'/Komfort7'}>
               <h3 className='mb-5 text-green-700 sm:text-[19px] md:text-[21px] lg:text-[30px] text-[15px]'>
                 <u>Осень – не повод откладывать стройку!</u>
               </h3>
@@ -36,7 +36,7 @@ const Maqolalar = () => {
           {/* 2 */}
           <li className='py-5 px-6 bg-gray-200'>
             <p className='mb-1 text-gray-400'>07.06.2022</p>
-            <Link to={'/QurilishniKechiktirish'}>
+            <Link to={'/Komfort8'}>
               <h3 className='mb-5 text-green-700 sm:text-[19px] md:text-[21px] lg:text-[30px] text-[15px]'>
                 <u>Преимущества деревянного домостроения</u>
               </h3>
@@ -49,7 +49,7 @@ const Maqolalar = () => {
           {/* 3 */}
           <li className='py-5 px-6 bg-gray-200'>
             <p className='mb-1 text-gray-400'>07.06.2022</p>
-            <Link to={'/QurilishniKechiktirish'}>
+            <Link to={'/Komfort3'}>
               <h3 className='mb-5 text-green-700 sm:text-[19px] md:text-[21px] lg:text-[30px] text-[15px]'>
                 <u>С чего начать строительство загородного дома</u>
               </h3>
