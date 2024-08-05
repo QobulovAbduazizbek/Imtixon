@@ -273,7 +273,7 @@ const Home = () => {
           modules={[Parallax, Pagination, Navigation]}
           className="mySwiper"
         >
-          <div className="relative w-full max-w-base px-4 sm:px-8 md:px-12 mx-auto py-5">
+          <div className="relative w-full max-w-base px-4 sm:px-8 md:px-12 mx-auto md:py-5 py-3">
             <SwiperSlide
               style={{
                 "background-image":
