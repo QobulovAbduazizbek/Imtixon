@@ -368,7 +368,7 @@ const Home = () => {
           <div className="w-full max-w-[1400px] mx-auto px-5 pb-20">
             <h3
               data-aos="fade-up"
-              className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
+              className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10 text-center"
             >
               Проекты домов
             </h3>
@@ -399,7 +399,7 @@ const Home = () => {
               <div className="text-center">
                 <h3
                   data-aos="fade-up"
-                  className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-20 text-center"
+                  className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10 text-center"
                 >
                   Типы возводимых домов
                 </h3>
@@ -544,7 +544,7 @@ const Home = () => {
           <div className="w-full max-w-base mx-auto">
             <h3
               data-aos="fade-up"
-              className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
+              className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10 text-center"
             >
               Этапы работ
             </h3>
@@ -626,7 +626,7 @@ const Home = () => {
             <div className="w-full max-w-base  mx-auto px-10 py-20">
               <h3
                 data-aos="fade-up"
-                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
+                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10 text-center"
               >
                 Преимущества загородного дома
               </h3>
@@ -709,7 +709,7 @@ const Home = () => {
             <div className="w-full max-w-base  mx-auto px-5 pt-14">
               <h3
                 data-aos="fade-up"
-                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold  text-center"
+                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10  text-center"
               >
                 О компании
               </h3>
@@ -838,7 +838,7 @@ const Home = () => {
             <div className="w-full max-w-base px-5 mx-auto items-center">
               <h3
                 data-aos="fade-up"
-                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center"
+                className="text-[40px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10 text-center"
               >
                 Статьи
               </h3>
@@ -969,7 +969,7 @@ const Home = () => {
                   <ul>
                     <h3
                       data-aos="fade-up"
-                      className="text-[40px] text-white sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24"
+                      className="text-[40px] text-white sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-10"
                     >
                       Остались вопросы?
                     </h3>
