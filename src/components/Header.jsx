@@ -169,11 +169,11 @@ const Header = () => {
                 onMouseLeave={handleClose}
                 className="relative"
               >
-                <Button>
+                <Link to={'#'}>
                   <span className="py-3 px-5 border-2 border-green-500 hover:bg-[#79c701] hover:text-white duration-700 text-black rounded-md font-medium text-[16px] md:text-[20px]">
                     Проекты
                   </span>
-                </Button>
+                </Link>
                 {down && (
                   <div
                     onMouseMove={handleOpen}
@@ -329,11 +329,11 @@ const Header = () => {
             <div className="lg:hidden">
               <Popover placement="bottom-end">
                 <PopoverHandler>
-                  <Button>
+                  <Link to={'#'}>
                     <div className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-3 rounded-lg">
                       <span className="font-medium">Меню</span>
                     </div>
-                  </Button>
+                  </Link>
                 </PopoverHandler>
                 <PopoverContent className="w-64 z-50 border-none">
                   {" "}
