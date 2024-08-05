@@ -27,6 +27,12 @@ import Kontakt from './pages/Kontakt'
 import QurilishniKechiktirish from './pages/QurilishniKechiktirish'
 import PageNoteFound from './pages/PageNoteFound'
 import Page from './pages/Page'
+import Komfort from './pages/Komfort'
+import Komfort2 from './pages/Komfort2'
+import Komfort3 from './pages/Komfort3'
+import Komfort4 from './pages/Komfort4'
+import Komfort5 from './pages/Komfort5'
+import Komfort6 from './pages/Komfort6'
 
 
 const App = () => {
@@ -57,6 +63,12 @@ const App = () => {
         <Route path='/BizHaqimizda' element={<BizHaqimizda/>}/>
         <Route path='*' element={<PageNoteFound/>}/>
         <Route path='page' element={<Page/>}/>
+        <Route path='Komfort' element={<Komfort/>}/>
+        <Route path='Komfort2' element={<Komfort2/>}/>
+        <Route path='Komfort3' element={<Komfort3/>}/>
+        <Route path='Komfort4' element={<Komfort4/>}/>
+        <Route path='Komfort5' element={<Komfort5/>}/>
+        <Route path='Komfort6' element={<Komfort6/>}/>
 
 
 

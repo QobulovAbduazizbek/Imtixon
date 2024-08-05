@@ -23,7 +23,7 @@ const UyProekti = () => {
             seal: "Размер:          10х7.5м",
             fittings: "Кол-во комнат:   10х7.5м",
             price: "10 505 000",
-            linkTitle: '/Page'
+            linkTitle: '/Komfort'
         },
         {
             img: Qulay_2,
@@ -32,7 +32,7 @@ const UyProekti = () => {
             seal: "Размер:          10х7.5м",
             fittings: "Кол-во комнат:   10х7.5м",
             price: "10 505 000",
-            linkTitle: '/Page'
+            linkTitle: '/Komfort2'
 
         },
         {
@@ -42,7 +42,7 @@ const UyProekti = () => {
             seal: "Размер:          10х7.5м",
             fittings: "Кол-во комнат:   10х7.5м",
             price: "10 505 000",
-            linkTitle: '/Page'
+            linkTitle: '/Komfort3'
 
         },
         {
@@ -52,7 +52,7 @@ const UyProekti = () => {
             seal: "Размер:          10х7.5м",
             fittings: "Кол-во комнат:   10х7.5м",
             price: "10 505 000",
-            linkTitle: '/Page'
+            linkTitle: '/Komfort4'
 
         },
         {
@@ -62,7 +62,7 @@ const UyProekti = () => {
             seal: "Размер:          10х7.5м",
             fittings: "Кол-во комнат:   10х7.5м",
             price: "10 505 000",
-            linkTitle: '/Page'
+            linkTitle: '/Komfort5'
 
         },
         {
@@ -72,7 +72,7 @@ const UyProekti = () => {
             seal: "Размер:          10х7.5м",
             fittings: "Кол-во комнат:   10х7.5м",
             price: "10 505 000",
-            linkTitle: '/Page'
+            linkTitle: '/Komfort6'
 
         },
         

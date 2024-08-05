@@ -8,6 +8,104 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Footer = () => {
+
+  // Telegram bot
+  const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  const [checkboxError, setCheckboxError] = useState(false); // New state for checkbox error
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+  const [rotate, setRotate] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleModal = () => {
+    setRotate(true);
+    setIsModalOpen(prev => !prev);
+    setTimeout(() => setRotate(false), 300);
+  };
+
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+
+  const handlePhone = (event) => {
+    setPhone(event.target.value);
+  };
+  const handleCheckboxChange = (event) => {
+    setIsCheckboxChecked(event.target.checked);
+    setCheckboxError(false); // Reset error state when checkbox is changed
+  };
+
+  const handleSubmitInput = (event) => {
+    event.preventDefault();
+    const trimmedName = name.trim();
+    const trimmedPhone = phone.trim();
+  
+    if (trimmedName === "" || trimmedPhone === "") {
+      alert("Iltimos malumotni to'ldiring");
+    } else if (!isCheckboxChecked) {
+      setCheckboxError(true); // Show error message if checkbox is not checked
+      alert("Iltimos, shaxsiy ma'lumotlaringizni tasdiqlang");
+    } else {
+      const telegram_bot_id = "7233272711:AAH91LcYfkmAKISHvEZrCQwnisVlVIf7MBE";
+      const chat_id = "-1002167792051";
+  
+      const telegramMessage = `Name: ${name}\nPhone Number: ${phone}`;
+  
+      axios
+        .post(`https://api.telegram.org/bot${telegram_bot_id}/sendMessage`, {
+          chat_id,
+          text: telegramMessage,
+        })
+        .then((response) => {
+          setName("");
+          setPhone("");
+          setIsCheckboxChecked(false);
+          setCheckboxError(false); //
+          alert("Ma'lumot yuborildi!");
+        })
+        .catch((error) => {
+          console.error("Error sending message:", error);
+        });
+    }
+  };
+  
+
+  const toggleInfoModal = () => {
+    setIsInfoModalOpen(prev => !prev);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsModalOpen(false);
+        setIsInfoModalOpen(false);
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setIsModalOpen(false);
+      setIsInfoModalOpen(false);
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+
   const [modal, setModal] = useState(false);
   const [form, setForm] = useState({ name: '', message: '', phone: '' });
   const [error, setError] = useState('');
@@ -23,26 +121,8 @@ const Footer = () => {
   }
   document.addEventListener('keydown', clickEscape);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { name, message, phone } = form;
-
-    if (!name || !message || !phone) {
-      setError('Barcha maydonlarni to\'ldiring!');
-    } else {
-      setError('');
-      // Submit form data
-      console.log('Form submitted:', form);
-      setModal(false); // Close modal on successful submission
-    }
-  }
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
@@ -105,41 +185,68 @@ const Footer = () => {
             <div className='px-5 md:px-10 py-12'>
               <h1 className='text-black text-3xl text-center font-semibold mb-3'>Заказать звонок</h1>
               <p className="text-black text-xl text-center mb-5">Мы ответим в удобное для вас время</p>
-              <form onSubmit={handleSubmit}>
-                <input
-                  className='text-black w-full text-base sm:text-lg px-4 py-2 mb-4 border-[1px] rounded-md hover:border-green-500 duration-500'
-                  type="text"
-                  placeholder="Ваше имя"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                />
-                <textarea
-                  className='text-black w-full text-base sm:text-lg px-4 py-2 mb-4 border-[1px] rounded-md hover:border-green-500 duration-500'
-                  name="message"
-                  placeholder="Объяснение"
-                  value={form.message}
-                  onChange={handleChange}
-                ></textarea>
-                <input
-                  className='text-black w-full text-base sm:text-lg px-4 py-2 mb-4 border-[1px] rounded-md hover:border-green-500 duration-500'
-                  type="tel"
-                  placeholder="+7 (___) ___ __ __"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                />
-                 <div className='flex items-center mb-7'>
-                <input type="checkbox" className='mr-3 h-5 w-5 rounded-lg border-none' />
-                <label >
-                  Я согласен(на) на обработку <Link to={'/FoydalanishSharti'} className='text-[15px] text-black duration-500'><u>персональных данных </u></Link>
-                </label>
-              </div>
-                <button className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-2 rounded-lg text-white" type="submit">
-                  Отправить
-                </button>
-                {error && <p className="text-red-500 mt-3">{error}</p>}
-              </form>
+              <form onSubmit={handleSubmitInput}>
+              <ul>
+                <li className="mb-5">
+                  <form action="">
+                    <input
+                      data-aos="fade-up"
+                      required
+                      type="text"
+                      name="name"
+                      placeholder="Ваше имя"
+                      onChange={handleName}
+                      value={name}
+                      className="py-[20px] pr-[220px] mb-5 lg:mb-0 pl-5 rounded-lg text-black font-medium mr-6"
+                    />
+                    <input
+                      onChange={handlePhone}
+                      data-aos="fade-up"
+                      type="text"
+                      name="phone"
+                      placeholder="+7 (___) ___ __ __"
+                      value={phone}
+                      className="py-[20px] pr-[220px] mt-5 pl-5 rounded-lg text-black font-medium"
+                    />
+                  </form>
+                </li>
+                <li>
+                  <div className="flex items-center mb-5">
+                    <input
+                      id="privacy"
+                      checked={isCheckboxChecked}
+                      onChange={handleCheckboxChange}
+                      data-aos="fade-up"
+                      type="checkbox"
+                      className="mr-3 h-5 w-5 rounded-lg border-none"
+                    />
+                    <p
+                      data-aos="fade-up"
+                      className="text-[15px] font-medium text-[#868686]"
+                    >
+                      <Link data-aos="fade-up" to={"/FoydalanishSharti"}>
+                        Ознакомлен(а) с{" "}
+                      </Link>{" "}
+                      <u>пользовательским соглашением *</u>
+                    </p>
+                    {checkboxError && (
+                      <p className="text-red-500 text-sm">
+                        Пожалуйста, подтвердите согласие
+                      </p>
+                    )}
+                  </div>
+                </li>
+                <li>
+                  <button
+                    data-aos="fade-up"
+                    type="submit"
+                    className="bg-[#79c701] py-6 rounded-lg px-7 text-white text-[20px] font-semibold"
+                  >
+                    Заказать звонок
+                  </button>
+                </li>
+              </ul>
+            </form>
              
             </div>
           </div>

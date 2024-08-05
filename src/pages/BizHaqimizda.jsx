@@ -8,6 +8,103 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const BizHaqimizda = () => {
+   // Telegram bot
+   const [phone, setPhone] = useState("");
+   const [name, setName] = useState("");
+   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+   const [checkboxError, setCheckboxError] = useState(false); // New state for checkbox error
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+   const [rotate, setRotate] = useState(false);
+   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+ 
+   const toggleModal = () => {
+     setRotate(true);
+     setIsModalOpen(prev => !prev);
+     setTimeout(() => setRotate(false), 300);
+   };
+ 
+   const handleName = (event) => {
+     setName(event.target.value);
+   };
+ 
+   const handlePhone = (event) => {
+     setPhone(event.target.value);
+   };
+   const handleCheckboxChange = (event) => {
+     setIsCheckboxChecked(event.target.checked);
+     setCheckboxError(false); // Reset error state when checkbox is changed
+   };
+ 
+   const handleSubmitInput = (event) => {
+     event.preventDefault();
+     const trimmedName = name.trim();
+     const trimmedPhone = phone.trim();
+   
+     if (trimmedName === "" || trimmedPhone === "") {
+       alert("Iltimos malumotni to'ldiring");
+     } else if (!isCheckboxChecked) {
+       setCheckboxError(true); // Show error message if checkbox is not checked
+       alert("Iltimos, shaxsiy ma'lumotlaringizni tasdiqlang");
+     } else {
+       const telegram_bot_id = "7233272711:AAH91LcYfkmAKISHvEZrCQwnisVlVIf7MBE";
+       const chat_id = "-1002167792051";
+   
+       const telegramMessage = `Name: ${name}\nPhone Number: ${phone}`;
+   
+       axios
+         .post(`https://api.telegram.org/bot${telegram_bot_id}/sendMessage`, {
+           chat_id,
+           text: telegramMessage,
+         })
+         .then((response) => {
+           setName("");
+           setPhone("");
+           setIsCheckboxChecked(false);
+           setCheckboxError(false); //
+           alert("Ma'lumot yuborildi!");
+         })
+         .catch((error) => {
+           console.error("Error sending message:", error);
+         });
+     }
+   };
+   
+ 
+   const toggleInfoModal = () => {
+     setIsInfoModalOpen(prev => !prev);
+   };
+ 
+   const toggleMobileMenu = () => {
+     setIsMobileMenuOpen(prev => !prev);
+   };
+ 
+   useEffect(() => {
+     const handleKeyDown = (event) => {
+       if (event.key === 'Escape') {
+         setIsModalOpen(false);
+         setIsInfoModalOpen(false);
+         setIsMobileMenuOpen(false);
+       }
+     };
+ 
+     window.addEventListener('keydown', handleKeyDown);
+     return () => window.removeEventListener('keydown', handleKeyDown);
+   }, []);
+ 
+   const handleOverlayClick = (e) => {
+     if (e.target === e.currentTarget) {
+       setIsModalOpen(false);
+       setIsInfoModalOpen(false);
+       setIsMobileMenuOpen(false);
+     }
+   };
+ 
+   useEffect(() => {
+     AOS.init();
+   }, []);
+
+
   const [modal, setModal] = useState(false);
   const [form, setForm] = useState({ name: '', phone: '', message: '' });
   const [errors, setErrors] = useState({ name: '', phone: '', message: '' });
@@ -27,45 +124,8 @@ const BizHaqimizda = () => {
     return () => document.removeEventListener('keydown', clickEscape);
   }, []);
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Basic validation
-    let valid = true;
-    let newErrors = { name: '', phone: '', message: '' };
-
-    if (!form.name) {
-      newErrors.name = 'Имя обязательно';
-      valid = false;
-    }
-
-    if (!form.phone) {
-      newErrors.phone = 'Телефон обязателен';
-      valid = false;
-    }
-
-    if (!form.message) {
-      newErrors.message = 'Текст отзыва обязателен';
-      valid = false;
-    }
-
-    setErrors(newErrors);
-
-    if (valid) {
-      // Handle form submission
-      console.log('Form submitted:', form);
-      setModal(false);
-    }
-  };
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
@@ -109,44 +169,68 @@ const BizHaqimizda = () => {
             <button onClick={() => setModal(false)} className='absolute top-0 right-0 w-12 md:w-16 h-12 md:h-16 flex items-center justify-center rounded-full text-3xl font-bold bg-white text-black font-mono'>&times;</button>
             <div className='px-5 md:px-10 py-12'>
               <h1 className='text-black text-2xl md:text-3xl font-semibold mb-7'>Оставить отзыв</h1>
-              <form onSubmit={handleSubmit}>
-                <p className='text-[18px] md:text-[20px] mb-1'>Имя <span className='text-red-500 font-bold'>*</span></p>
-                <input
-                  className={`text-black w-full md:w-[550px] text-[16px] px-5 py-3 mb-5 border-[1px] rounded-md ${errors.name ? 'border-red-500' : 'hover:bg-[#a8dff8da] hover:border-[#a8dff8da]'} duration-500`}
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                />
-                {errors.name && <p className='text-red-500 text-sm'>{errors.name}</p>}
-                
-                <p className='text-[18px] md:text-[20px] mb-1'>Телефон <span className='text-red-500 font-bold'>*</span></p>
-                <input
-                  className={`text-black w-full md:w-[550px] text-[16px] px-5 py-3 mb-5 border-[1px] rounded-md ${errors.phone ? 'border-red-500' : 'hover:bg-[#a8dff8da] hover:border-[#a8dff8da]'} duration-500`}
-                  type="tel"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                />
-                {errors.phone && <p className='text-red-500 text-sm'>{errors.phone}</p>}
-                
-                <p className='text-[18px] md:text-[20px] mb-1'>Текст отзыва <span className='text-red-500 font-bold'>*</span></p>
-                <textarea
-                  className={`text-black w-full md:w-[550px] text-[16px] px-5 py-3 mb-5 border-[1px] rounded-md ${errors.message ? 'border-red-500' : 'hover:bg-[#a8dff8da] hover:border-[#a8dff8da]'} duration-500`}
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                ></textarea>
-                {errors.message && <p className='text-red-500 text-sm'>{errors.message}</p>}
-                
-                <div className='flex items-center mb-7'>
-                  <input type="checkbox" className='mr-3 h-5 w-5 rounded-lg border-none' />
-                  <Link to={'/FoydalanishSharti'} className='text-[14px] md:text-[16px] hover:text-[#51bef0e3] duration-500'>
-                    Я принимаю условия обработки моих <u className='text-[#51bef0e3]'>персональных данных</u> <span className='text-red-600'>*</span>
-                  </Link>
-                </div>
-                <button type='submit' className='px-5 md:px-7 py-4 bg-[#2c9dd1] text-white rounded-md hover:bg-[#33afe9] duration-500'>Отправить</button>
-              </form>
+              <form onSubmit={handleSubmitInput}>
+              <ul>
+                <li className="mb-5">
+                  <form action="">
+                    <input
+                      data-aos="fade-up"
+                      required
+                      type="text"
+                      name="name"
+                      placeholder="Ваше имя"
+                      onChange={handleName}
+                      value={name}
+                      className="py-[20px] pr-[220px] lg:mb-0 pl-5 rounded-lg text-black font-medium mr-6"
+                    />
+                    <input
+                      onChange={handlePhone}
+                      data-aos="fade-up"
+                      type="text"
+                      name="phone"
+                      placeholder="+7 (___) ___ __ __"
+                      value={phone}
+                      className="py-[20px] pr-[220px] mt-5 pl-5 rounded-lg text-black font-medium"
+                    />
+                  </form>
+                </li>
+                <li>
+                  <div className="flex items-center mb-5">
+                    <input
+                      id="privacy"
+                      checked={isCheckboxChecked}
+                      onChange={handleCheckboxChange}
+                      data-aos="fade-up"
+                      type="checkbox"
+                      className="mr-3 h-5 w-5 rounded-lg border-none"
+                    />
+                    <p
+                      data-aos="fade-up"
+                      className="text-[15px] font-medium text-[#868686]"
+                    >
+                      <Link data-aos="fade-up" to={"/FoydalanishSharti"}>
+                        Ознакомлен(а) с{" "}
+                      </Link>{" "}
+                      <u>пользовательским соглашением *</u>
+                    </p>
+                    {checkboxError && (
+                      <p className="text-red-500 text-sm">
+                        Пожалуйста, подтвердите согласие
+                      </p>
+                    )}
+                  </div>
+                </li>
+                <li>
+                  <button
+                    data-aos="fade-up"
+                    type="submit"
+                    className="bg-[#79c701] py-6 rounded-lg px-7 text-white text-[20px] font-semibold"
+                  >
+                    Заказать звонок
+                  </button>
+                </li>
+              </ul>
+            </form>
             </div>
           </div>
         </div>

@@ -175,7 +175,7 @@ const Header = () => {
                   <div
                     onMouseMove={handleOpen}
                     onMouseLeave={handleClose}
-                    className="absolute left-0 top-full mt-2 py-5 px-5 rounded-md bg-[#fff] shadow-lg z-10"
+                    className="absolute left-0 top-full mt-2 py-5 px-16 rounded-md bg-[#fff] shadow-lg z-10"
                   >
                     <ul className="text-center">
                       <li>
@@ -453,7 +453,7 @@ const Header = () => {
                       placeholder="Ваше имя"
                       onChange={handleName}
                       value={name}
-                      className="py-[20px] pr-[50px] mb-5 lg:mb-0 pl-5 rounded-lg text-black font-medium mr-6"
+                      className="py-[20px] pr-[220px] mb-5 lg:mb-0 pl-5 rounded-lg text-black font-medium mr-6"
                     />
                     <input
                       onChange={handlePhone}
@@ -462,7 +462,7 @@ const Header = () => {
                       name="phone"
                       placeholder="+7 (___) ___ __ __"
                       value={phone}
-                      className="py-[20px] pr-[50px] pl-5 rounded-lg text-black font-medium"
+                      className="py-[20px] pr-[220px] mt-5 pl-5 rounded-lg text-black font-medium"
                     />
                   </form>
                 </li>
