@@ -4,6 +4,8 @@ import Togo_1 from '../img/Togo_1.webp';
 import Togo_2 from '../img/Togo_2.webp';
 import Hola_1 from '../img/Hola_1.webp';
 import PageWrapper from '../components/PageWrapper';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const BizHaqimizda = () => {
   const [modal, setModal] = useState(false);
@@ -62,6 +64,9 @@ const BizHaqimizda = () => {
       setModal(false);
     }
   };
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
 
   return (
     <PageWrapper>
@@ -72,27 +77,27 @@ const BizHaqimizda = () => {
           <Link to={'/Kompaniya'} className="text-[#6cd16c] text-[14px] md:text-[16px]"><u>О компании </u><span className='mx-1'>/</span></Link>
           <p className='text-[#a5a3a3] text-[14px] md:text-[16px]'>Отзывы о нас</p>
         </div>
-        <h3 className='text-[32px] md:text-[50px] font-bold mb-10'>Отзывы о нас</h3>
+        <h3 data-aos="fade-up" className='text-[32px] md:text-[50px] font-bold mb-10'>Отзывы о нас</h3>
         <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6'>
           <li>
-            <p className='text-[15px] md:text-[17px] mb-2'>Начинаем строительство уже второго дома. Первый строили для себя, теперь решили родителям жены сделать подарок, чтобы не ютились в маленькой квартире. Ребята, вы вообще молодцы и реально профессионалы! Хочу искренне поблагодарить Виктора, который проектировал, учесть столько мелочей… Спасибо! Надеемся, что все и дальше пойдет слажено, качественно и позитивно.</p>
+            <p data-aos="fade-up" className='text-[15px] md:text-[17px] mb-2'>Начинаем строительство уже второго дома. Первый строили для себя, теперь решили родителям жены сделать подарок, чтобы не ютились в маленькой квартире. Ребята, вы вообще молодцы и реально профессионалы! Хочу искренне поблагодарить Виктора, который проектировал, учесть столько мелочей… Спасибо! Надеемся, что все и дальше пойдет слажено, качественно и позитивно.</p>
             <div className='flex items-center mb-7'>
-              <img className='rounded-full w-[60px] md:w-[80px] h-[60px] md:h-[80px] mr-5' src={Togo_1} alt="" />
-              <p className='text-[18px] md:text-[20px] font-bold'>Кирилл Яковлев</p>
+              <img data-aos="fade-up" className='rounded-full w-[60px] md:w-[80px] h-[60px] md:h-[80px] mr-5' src={Togo_1} alt="" />
+              <p data-aos="fade-up" className='text-[18px] md:text-[20px] font-bold'>Кирилл Яковлев</p>
             </div>
           </li>
           <li>
-            <p className='text-[15px] md:text-[17px] mb-2'>У нас была масса сомнений по поводу строительства, но нам устроили экскурсию на строящемся объекте. Менеджер отвечал на все наши вопросы честно, толково. Очень располагает, когда люди прямо говорят: вот это сделать можно, это нельзя, а тут проблему можно обойти вот таким способом. В целом проект продуман прекрасно. В доме просто приятно находиться, душой отдыхаешь.</p>
+            <p data-aos="fade-up" className='text-[15px] md:text-[17px] mb-2'>У нас была масса сомнений по поводу строительства, но нам устроили экскурсию на строящемся объекте. Менеджер отвечал на все наши вопросы честно, толково. Очень располагает, когда люди прямо говорят: вот это сделать можно, это нельзя, а тут проблему можно обойти вот таким способом. В целом проект продуман прекрасно. В доме просто приятно находиться, душой отдыхаешь.</p>
             <div className='flex items-center mb-7'>
-              <img className='rounded-full w-[60px] md:w-[80px] h-[60px] md:h-[80px] mr-5' src={Hola_1} alt="" />
-              <p className='text-[18px] md:text-[20px] font-bold'>Александра Сомова</p>
+              <img data-aos="fade-up" className='rounded-full w-[60px] md:w-[80px] h-[60px] md:h-[80px] mr-5' src={Hola_1} alt="" />
+              <p data-aos="fade-up" className='text-[18px] md:text-[20px] font-bold'>Александра Сомова</p>
             </div>
           </li>
           <li>
-            <p className='text-[15px] md:text-[17px] mb-2'>Очень благодарен за теплый и профессиональный подход, который я получил. Спасибо за ответственность, открытость и готовность помочь. Всегда буду рекомендовать вас друзьям и знакомым.</p>
+            <p data-aos="fade-up" className='text-[15px] md:text-[17px] mb-2'>Очень благодарен за теплый и профессиональный подход, который я получил. Спасибо за ответственность, открытость и готовность помочь. Всегда буду рекомендовать вас друзьям и знакомым.</p>
             <div className='flex items-center mb-7'>
-              <img className='rounded-full w-[60px] md:w-[80px] h-[60px] md:h-[80px] mr-5' src={Togo_2} alt="" />
-              <p className='text-[18px] md:text-[20px] font-bold'>Александр Ягудин</p>
+              <img data-aos="fade-up" className='rounded-full w-[60px] md:w-[80px] h-[60px] md:h-[80px] mr-5' src={Togo_2} alt="" />
+              <p data-aos="fade-up" className='text-[18px] md:text-[20px] font-bold'>Александр Ягудин</p>
             </div>
           </li>
         </ul>

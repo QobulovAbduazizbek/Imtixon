@@ -39,6 +39,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 import { Parallax, Pagination, Navigation } from "swiper/modules";
@@ -140,6 +142,10 @@ const Home = () => {
     }
   };
   document.addEventListener("keydown", clickEscape);
+
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
   return (
     <PageWrapper>
     <div className="bg-[#ffffff]">
@@ -163,15 +169,15 @@ const Home = () => {
             <div className="w-full max-w-[1450px] mx-auto py-5 px-5">
               <div
                 className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
-                data-swiper-parallax="-300"
+                data-swiper-parallax="-300" 
               >
-                Строительство <br /> загородных домов
+                <p data-aos="fade-up">Строительство <br /> загородных домов</p>
               </div>
               <div
                 className="subtitle mb-6 sm:mb-8 md:mb-10"
                 data-swiper-parallax="-200"
               >
-                <p>Заселяйтесь в свой дом через 60 дней</p>
+                <p data-aos="fade-up">Заселяйтесь в свой дом через 60 дней</p>
               </div>
               <div className="text" data-swiper-parallax="-100">
                 <Link
@@ -194,13 +200,13 @@ const Home = () => {
                 className="font-semibold text-[24px] sm:text-[32px] md:text-[50px]"
                 data-swiper-parallax="-300"
               >
-                Теплый семейный дом <br /> с террасой за 30 дней
+                <p data-aos="fade-up">Теплый семейный дом <br /> с террасой за 30 дней</p>
               </div>
               <div
                 className="subtitle mb-6 sm:mb-8 md:mb-10"
                 data-swiper-parallax="-200"
               >
-                <p>Гарантия 5 лет с момента сдачи объекта</p>
+                <p data-aos="fade-up">Гарантия 5 лет с момента сдачи объекта</p>
               </div>
               <div className="text" data-swiper-parallax="-100">
                 <Link
@@ -221,9 +227,9 @@ const Home = () => {
 
 <div>
 
-<div className='w-full max-w-[1400px] mx-auto px-5 mt-10'>
-  <h3 className='text-[24px] sm:text-[30px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[54px] font-bold mt-24 text-center'>Проекты домов</h3>
-  <p className='text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] text-center mb-10'>
+<div  className='w-full max-w-[1400px] mx-auto px-5 mt-10'>
+  <h3 data-aos="fade-up" className='text-[24px] sm:text-[30px] md:text-[36px] lg:text-[42px] xl:text-[48px] 2xl:text-[54px] font-bold mt-24 text-center'>Проекты домов</h3>
+  <p data-aos="fade-up" className='text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] text-center mb-10'>
     Мы разработали более 1000 проектов комфортных домов
   </p>
   <ul className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-14'>
@@ -249,10 +255,10 @@ const Home = () => {
 </div>
 
 <div className='w-full max-w-[1400px] mx-auto px-5 pb-20'>
-      <h3 className='text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center'>
+      <h3 data-aos="fade-up" className='text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold mt-24 text-center'>
         Проекты домов
       </h3>
-      <p className='text-[14px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center mb-10'>
+      <p data-aos="fade-up" className='text-[14px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center mb-10'>
         Мы разработали более 1000 проектов комфортных домов
       </p>
       <LightGallery
@@ -267,8 +273,8 @@ const Home = () => {
     <div className='bg-[#fafafa]'>
   <div className='w-full max-w-base mx-auto px-5 pb-20'>
     <div className='text-center'>
-      <h3 className='text-[30px] sm:text-[50px] font-bold text-center pt-10 mb-5'>Типы возводимых домов</h3>
-      <p className='text-[20px] sm:text-[25px] mb-7'>Красивые дома для комфортного проживания</p>
+      <h3 data-aos="fade-up" className='text-[30px] sm:text-[50px] font-bold text-center pt-10 mb-5'>Типы возводимых домов</h3>
+      <p data-aos="fade-up" className='text-[20px] sm:text-[25px] mb-7'>Красивые дома для комфортного проживания</p>
     </div>
     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10">
       <li className='flex flex-col'>
@@ -347,14 +353,11 @@ const Home = () => {
   </div>
 </div>
 
-
-
-
 <div className='w-full max-w-base mx-auto'>
-      <h3 className='text-[40px] sm:[50px] font-bold mt-24 text-center'>
+      <h3 data-aos="fade-up" className='text-[40px] sm:[50px] font-bold mt-24 text-center'>
         Этапы работ
       </h3>
-      <p className='text-[16px] text-center mb-10'>С нами выгодно строить</p>
+      <p data-aos="fade-up" className='text-[16px] text-center mb-10'>С нами выгодно строить</p>
       <ul className='w-full max-w-base px-5 pb-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-7'>
         <li className='border-2 rounded-md flex items-center py-3 pl-5'>
           <h4 className='font-bold text-[50px] text-[#bef762da] mr-5'>01.</h4>
@@ -402,72 +405,72 @@ const Home = () => {
     </div>
 <div className='bg-[#fdfdfd]'>
   <div className='w-full max-w-base  mx-auto px-10 py-20'>
-    <h3 className='text-center font-bold text-[30px] sm:text-[60px]'>Преимущества загородного дома</h3>
-    <p className='text-center text-[20px] mb-10'>Ощутите прелесть загородной жизни</p>
+    <h3 data-aos="fade-up" className='text-center font-bold text-[30px] sm:text-[60px]'>Преимущества загородного дома</h3>
+    <p data-aos="fade-up" className='text-center text-[20px] mb-10'>Ощутите прелесть загородной жизни</p>
     <ul className='grid grid-cols-1 gap-5 md:grid-cols-2 md:grid-rows-2'>
       <li className='bg-[#fafafa] text-center '>
-        <img className='mx-auto mb-3' src={h_icon} alt="" />
-        <p className='font-semibold text-[20px]'>Собственная планировка</p>
-        <p className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
+        <img data-aos="fade-up" className='mx-auto mb-3' src={h_icon} alt="" />
+        <p data-aos="fade-up" className='font-semibold text-[20px]'>Собственная планировка</p>
+        <p data-aos="fade-up" className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
       </li>
       <li className='bg-[#fafafa] text-center'>
-        <img className='mx-auto' src={h_icon} alt="" />
-        <p className='font-semibold text-[20px]'>Отсутствие шума и соседей</p>
-        <p className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
+        <img data-aos="fade-up" className='mx-auto' src={h_icon} alt="" />
+        <p data-aos="fade-up" className='font-semibold text-[20px]'>Отсутствие шума и соседей</p>
+        <p data-aos="fade-up" className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
       </li>
       <li className='bg-[#fafafa] text-center'>
-        <img className='mx-auto' src={h_icon} alt="" />
-        <p className='font-semibold text-[20px]'>Чистый воздух</p>
-        <p className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
+        <img data-aos="fade-up" className='mx-auto' src={h_icon} alt="" />
+        <p data-aos="fade-up" className='font-semibold text-[20px]'>Чистый воздух</p>
+        <p data-aos="fade-up" className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
       </li>
       <li className='bg-[#fafafa] text-center'>
-        <img className='mx-auto' src={h_icon} alt="" />
-        <p className='font-semibold text-[20px]'>Собственный бассейн</p>
-        <p className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
+        <img data-aos="fade-up" className='mx-auto' src={h_icon} alt="" />
+        <p data-aos="fade-up" className='font-semibold text-[20px]'>Собственный бассейн</p>
+        <p data-aos="fade-up" className='font-medium text-[16px] pb-4 text-gray-400'>Описание для информативности</p>
       </li>
     </ul>
   </div>
 </div>
 <div className='bg-img bg-no-repeat bg-cover w-full '>
   <div className='w-full max-w-base  mx-auto px-5 pt-14'>
-    <h3 className='text-center text-[30px] sm:[60px] font-bold text-white mb-10'>О компании</h3>
+    <h3 data-aos="fade-up" className='text-center text-[30px] sm:[60px] font-bold text-white mb-10'>О компании</h3>
     <div className='bg-white rounded-lg mb-14 w-full max-w-5xl py-10 px-12  mx-auto '>
-      <p className='text-[15px] text-[#999797] mb-5'>Сегодня загородный дом - это не только престиж и статус.</p>
-      <p className='text-[15px] text-[#999797] mb-5'>В первую очередь, это забота о здоровье. Свежий воздух, радость от регулярного общения с природой, возможность гулять с детьми под открытым небом, тишина, от которой так отвыкли жители больших городов - это неполный перечень преимуществ, которые доступны обладателю загородного дома.</p>
-      <p className='text-[15px] text-[#999797] mb-7'>Строительство дома - это очень ответственный шаг. Вы хотите построить загородный дом или баню, но не знаете с чего начать? На нашем сайте мы расскажем Вам, как осуществляется строительство загородных домов, какие при этом возникают сложности и как их можно избежать. Воспользовавшись нашими советами, Вы сможете со знанием дела выбрать, какой из типов домов Вам больше подходит.</p>
+      <p data-aos="fade-up" className='text-[15px] text-[#999797] mb-5'>Сегодня загородный дом - это не только престиж и статус.</p>
+      <p data-aos="fade-up" className='text-[15px] text-[#999797] mb-5'>В первую очередь, это забота о здоровье. Свежий воздух, радость от регулярного общения с природой, возможность гулять с детьми под открытым небом, тишина, от которой так отвыкли жители больших городов - это неполный перечень преимуществ, которые доступны обладателю загородного дома.</p>
+      <p data-aos="fade-up" className='text-[15px] text-[#999797] mb-7'>Строительство дома - это очень ответственный шаг. Вы хотите построить загородный дом или баню, но не знаете с чего начать? На нашем сайте мы расскажем Вам, как осуществляется строительство загородных домов, какие при этом возникают сложности и как их можно избежать. Воспользовавшись нашими советами, Вы сможете со знанием дела выбрать, какой из типов домов Вам больше подходит.</p>
       <div className='text-center'>
-        <Link to={'/Kompaniya'} className='text-[#45ca39] text-[18px]'>Подробнее</Link>
+        <Link data-aos="fade-up" to={'/Kompaniya'} className='text-[#45ca39] text-[18px]'>Подробнее</Link>
         <hr className=' mx-auto w-[150px] border-y-2 mb-5 border-[#45ca39] ' />
       </div>
     </div>
   </div>
   <ul className='w-full max-w-5xl pb-16 mx-auto grid grid-cols-1 gap-5 md:grid-cols-2 md:grid-rows-2'>
     <li className='flex items-center'>
-      <img className='w-[150px]' src={h_icon} alt="" />
+      <img data-aos="fade-up" className='w-[150px]' src={h_icon} alt="" />
       <div>
-        <p className='text-white text-[20px] sm:text-[28px]'>Фиксированная смета</p>
-        <p className='text-[20px] text-[#999797]'>Описание для информативности</p>
+        <p data-aos="fade-up" className='text-white text-[20px] sm:text-[28px]'>Фиксированная смета</p>
+        <p data-aos="fade-up" className='text-[20px] text-[#999797]'>Описание для информативности</p>
       </div>
     </li>
     <li className='flex items-center'>
-      <img className='w-[150px]' src={h_icon} alt="" />
+      <img data-aos="fade-up" className='w-[150px]' src={h_icon} alt="" />
       <div>
-        <p className='text-white text-[20px] sm:text-[28px]'>Соблюдаем график работ</p>
-        <p className='text-[20px] text-[#999797]'>Описание для информативности</p>
+        <p data-aos="fade-up" className='text-white text-[20px] sm:text-[28px]'>Соблюдаем график работ</p>
+        <p data-aos="fade-up" className='text-[20px] text-[#999797]'>Описание для информативности</p>
       </div>
     </li>
     <li className='flex items-center'>
-      <img className='w-[150px]' src={h_icon} alt="" />
+      <img data-aos="fade-up" className='w-[150px]' src={h_icon} alt="" />
       <div>
-        <p className='text-white text-[20px] sm:text-[28px]'>Проектирование в подарок</p>
-        <p className='text-[20px] text-[#999797]'>Описание для информативности</p>
+        <p data-aos="fade-up" className='text-white text-[20px] sm:text-[28px]'>Проектирование в подарок</p>
+        <p data-aos="fade-up" className='text-[20px] text-[#999797]'>Описание для информативности</p>
       </div>
     </li>
     <li className='flex items-center'>
-      <img className='w-[150px]' src={h_icon} alt="" />
+      <img data-aos="fade-up" className='w-[150px]' src={h_icon} alt="" />
       <div>
-        <p className='text-white text-[20px] sm:text-[28px]'>Гарантия 5 лет</p>
-        <p className='text-[16px] text-[#999797]'>Описание для информативности</p>
+        <p data-aos="fade-up" className='text-white text-[20px] sm:text-[28px]'>Гарантия 5 лет</p>
+        <p data-aos="fade-up" className='text-[16px] text-[#999797]'>Описание для информативности</p>
       </div>
     </li>
   </ul>
@@ -475,7 +478,7 @@ const Home = () => {
 
 <div className='bg-[#fafafa]'>
   <div className='w-full max-w-base px-5 mx-auto items-center'>
-    <h3 className='text-[50px] font-bold text-center py-10'>Статьи</h3>
+    <h3 data-aos="fade-up" className='text-[50px] font-bold text-center py-10'>Статьи</h3>
     <ul className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10 mb-10">
       {projects.map((project) => {
         return (
@@ -483,8 +486,8 @@ const Home = () => {
             <Link to={`/portfolio/${project.title}`}  >
               <div className='bg-white pb-5 '>
                 <img className='inline-block h-[300px] w-full rounded-lg ' src={project.img} alt={project.title} />
-                <h3 className='py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500 '>{project.title}</h3>
-                <p>{project.text}</p>
+                <h3 data-aos="fade-up" className='py-3 px-5 text-center text-[25px] hover:text-[#6cd16c] duration-500 '>{project.title}</h3>
+                <p data-aos="fade-up">{project.text}</p>
               </div>
             </Link>
           </li>
@@ -503,22 +506,22 @@ const Home = () => {
         <div className='flex flex-col md:flex-row items-start justify-between'>
           <div className="md:mr-10 mb-10 md:mb-0">
             <ul>
-              <h3 className='text-[25px] sm:text-[45px] font-bold text-white mb-3'>
+              <h3 data-aos="fade-up" className='text-[25px] sm:text-[45px] font-bold text-white mb-3'>
                 Остались вопросы?
               </h3>
-              <p className='text-[15px] font-medium text-[#868686] mb-5'>
+              <p data-aos="fade-up" className='text-[15px] font-medium text-[#868686] mb-5'>
                 Свяжитесь с нами или оставьте заявку <br />
                 и мы проконсультируем вас по любому вопросу
               </p>
               <div className='flex items-center'>
-                <p className='text-[18px] sm:text-[25px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
-                <img className='w-16' src={Telegram} alt="Telegram" />
+                <p data-aos="fade-up" className='text-[18px] sm:text-[25px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
+                <img data-aos="fade-up" className='w-16' src={Telegram} alt="Telegram" />
               </div>
               <div className='flex items-center'>
-                <p className='text-[18px] sm:text-[25px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
-                <img className='w-16' src={wh} alt="WhatsApp" />
+                <p data-aos="fade-up" className='text-[18px] sm:text-[25px] text-white font-bold mr-3'>+7 (000) 000 00 00</p>
+                <img data-aos="fade-up" className='w-16' src={wh} alt="WhatsApp" />
               </div>
-              <Link className='text-[#45ca39] text-[16px]'>test@example.com</Link>
+              <Link data-aos="fade-up" className='text-[#45ca39] text-[16px]'>test@example.com</Link>
               <hr className='w-[125px] border-y-1 mb-5 border-[#45ca39]' />
             </ul>
           </div>
@@ -526,15 +529,16 @@ const Home = () => {
             <form onSubmit={handleSubmit}>
               <ul>
                 <li>
-                  <p className='text-[45px] sm:text-[25px] font-bold text-white mb-3'>
+                  <p data-aos="fade-up" className='text-[45px] sm:text-[25px] font-bold text-white mb-3'>
                     Мы ответим в удобное для <br /> вас время
                   </p>
-                  <p className='text-[15px] font-medium text-[#868686] mb-5'>
+                  <p data-aos="fade-up" className='text-[15px] font-medium text-[#868686] mb-5'>
                     Оставьте заявку на звонок прямо сейчас
                   </p>
                 </li>
                 <li className='mb-5'>
                   <input
+                  data-aos="fade-up"
                     required
                     type="text"
                     name="name"
@@ -545,6 +549,7 @@ const Home = () => {
                   />
                   {errors.name && <p className="text-red-600 text-sm">{errors.name}</p>}
                   <input
+                  data-aos="fade-up"
                     type="text"
                     name="phone"
                     placeholder='+7 (___) ___ __ __'
@@ -556,14 +561,15 @@ const Home = () => {
                 </li>
                 <li>
                   <div className='flex items-center mb-5'>
-                    <input type="checkbox" className='mr-3 h-5 w-5 rounded-lg border-none' />
-                    <p className='text-[15px] font-medium text-[#868686]'>
-                      <Link to={'/FoydalanishSharti'}>Ознакомлен(а) с </Link> <u>пользовательским соглашением *</u>
+                    <input data-aos="fade-up" type="checkbox" className='mr-3 h-5 w-5 rounded-lg border-none' />
+                    <p data-aos="fade-up" className='text-[15px] font-medium text-[#868686]'>
+                      <Link data-aos="fade-up" to={'/FoydalanishSharti'}>Ознакомлен(а) с </Link> <u>пользовательским соглашением *</u>
                     </p>
                   </div>
                 </li>
                 <li>
                   <button
+                  data-aos="fade-up"
                     type="submit"
                     className='bg-[#79c701] py-6 rounded-lg px-7 text-white text-[20px] font-semibold'
                   >

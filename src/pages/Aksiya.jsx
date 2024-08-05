@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import S_1 from '../img/S_1.webp';
 import S_2 from '../img/S_2.webp';
 import { useState } from 'react';
 import PageWrapper from '../components/PageWrapper';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const Aksiya = () => {
     const [modal, setModal] = useState(false);
@@ -17,6 +20,11 @@ const Aksiya = () => {
     }
     document.addEventListener('keydown', clickEscape);
 
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+      }, []);
+    
+
     return (
         <PageWrapper>
         <div>
@@ -25,14 +33,15 @@ const Aksiya = () => {
                     <Link to={'/'} className="text-[#6cd16c] text-[16px]"><u>Главная</u><span className='mx-1'>/</span></Link>
                     <p className='text-[#a5a3a3]'>Акции</p>
                 </div>
-                <h3 className='text-[30px] sm:text-[40px] md:text-[50px] font-bold mb-10'>Акции</h3>
+                <h3 className='text-[30px] sm:text-[40px] md:text-[50px] font-bold mb-10' data-aos="fade-up"
+>Акции</h3>
                 <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {/* 1 */}
                     <li>
                         <img className='h-[200px] sm:h-[300px] w-full object-cover' src={S_2} alt="" />
-                        <p className='text-[14px] my-2'>с 26 сентября по 9 декабря</p>
-                        <h3 className='text-[20px] sm:text-[25px] font-bold mb-2'>Теплый семейный дом с террасой за 30 дней</h3>
-                        <p className='text-[16px] text-gray-700 mb-7'>Гарантия 5 лет с момента сдачи объекта</p>
+                        <p className='text-[14px] my-2' data-aos="fade-up">с 26 сентября по 9 декабря</p>
+                        <h3 className='text-[20px] sm:text-[25px] font-bold mb-2' data-aos="fade-up">Теплый семейный дом с террасой за 30 дней</h3>
+                        <p className='text-[16px] text-gray-700 mb-7' data-aos="fade-up">Гарантия 5 лет с момента сдачи объекта</p>
                         <div className='flex'>
                             <Link onClick={() => setModal(true)} className='bg-[#1d63a5] mr-5 w-full sm:w-auto text-center text-[20px] py-2 px-2 rounded-lg text-[#90f041] font-bold hover:bg-[#2782d6] hover:text-white duration-500'>Связаться с нами</Link>
                         </div>
@@ -40,9 +49,9 @@ const Aksiya = () => {
                     {/* 2 */}
                     <li>
                         <img className='h-[200px] sm:h-[300px] w-full object-cover' src={S_1} alt="" />
-                        <p className='text-[14px] my-2'>с 20 августа по 29 сентября</p>
-                        <h3 className='text-[20px] sm:text-[25px] font-bold my-3'>Строительство загородных домов</h3>
-                        <p className='text-[16px] text-gray-700 mb-5'>Справьте новоселье в своем доме через</p>
+                        <p className='text-[14px] my-2' data-aos="fade-up">с 20 августа по 29 сентября</p>
+                        <h3 className='text-[20px] sm:text-[25px] font-bold my-3' data-aos="fade-up">Строительство загородных домов</h3>
+                        <p className='text-[16px] text-gray-700 mb-5' data-aos="fade-up">Справьте новоселье в своем доме через</p>
                         <div className='flex'>
                             <Link onClick={() => setModal(true)} className='bg-[#1d63a5] mr-5 w-full sm:w-auto text-center text-[20px] py-2 px-2 rounded-lg text-[#90f041] font-bold hover:bg-[#2782d6] hover:text-white duration-500'>Связаться с нами</Link>
                         </div>

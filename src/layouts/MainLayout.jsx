@@ -6,15 +6,14 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
   return (
-    <>
-      <div className="bg-tintBlue text-white">
-        <Header />
-      </div>
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </>
+    <div className='w-full min-h-screen flex flex-col'>
+    <Header />
+  <main className='grow overflow-x-hidden'>
+    <Outlet/>
+  </main>
+  <Footer/>
+</div>
+
   );
 };
 
