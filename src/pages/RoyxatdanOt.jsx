@@ -5,44 +5,128 @@ import Telegram from '../img/Telegram.png';
 import wh from '../img/wh.png';
 import vk from '../img/vk.png';
 import PageWrapper from '../components/PageWrapper';
+import axios from "axios";
 
 const Registration = () => {
-    // Holatlarni yaratish
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
+    // Telegram bot
+  const [phone, setPhone] = useState("");
+  const [name, setName] = useState("");
+  const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+  const [checkboxError, setCheckboxError] = useState(false); // New state for checkbox error
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+  const [rotate, setRotate] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const toggleModal = () => {
+    setRotate(true);
+    setIsModalOpen((prev) => !prev);
+    setTimeout(() => setRotate(false), 300);
+  };
 
-        // Input maydonlarini tekshirish
-        if (!email || !password || !confirmPassword || !name || !phone) {
-            setErrorMessage('Толдиринг'); // Xatolik xabari
-            return;
-        }
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
 
-        if (password !== confirmPassword) {
-            setErrorMessage('Пароли не совпадают'); // Parollar mos kelmasligi xabari
-            return;
-        }
+  const handlePhone = (event) => {
+    setPhone(event.target.value);
+  };
+  const handleCheckboxChange = (event) => {
+    setIsCheckboxChecked(event.target.checked);
+    setCheckboxError(false); // Reset error state when checkbox is changed
+  };
 
-        // Ma'lumotlarni console.log orqali chiqarish
-        console.log('Email:', email);
-        console.log('Password:', password);
-        console.log('Name:', name);
-        console.log('Phone:', phone);
+  const handleSubmitInput = (event) => {
+    event.preventDefault();
+    const trimmedName = name.trim();
+    const trimmedPhone = phone.trim();
 
-        // Formani tozalash
-        setEmail('');
-        setPassword('');
-        setConfirmPassword('');
-        setName('');
-        setPhone('');
-        setErrorMessage('');
-    };
+    if (trimmedName === "" || trimmedPhone === "") {
+      alert("Iltimos malumotni to'ldiring");
+    } else if (!isCheckboxChecked) {
+      setCheckboxError(true); // Show error message if checkbox is not checked
+      alert("Iltimos, shaxsiy ma'lumotlaringizni tasdiqlang");
+    } else {
+      const telegram_bot_id = "7151234929:AAHvZF3cYXukCLo4ywa_ec0c-u753vznJck";
+      const chat_id = "-1002083076166";
+
+      const telegramMessage = `Name: ${name}\nPhone Number: ${phone}`;
+
+      axios
+        .post(`https://api.telegram.org/bot${telegram_bot_id}/sendMessage`, {
+          chat_id,
+          text: telegramMessage,
+        })
+        .then((response) => {
+          setName("");
+          setPhone("");
+          setIsCheckboxChecked(false);
+          setCheckboxError(false); //
+          alert("Ma'lumot yuborildi!");
+        })
+        .catch((error) => {
+          console.error("Error sending message:", error);
+        });
+    }
+  };
+
+  const [formData, setFormData] = useState({
+    name: "",
+    message: "",
+    phone: "",
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    message: "",
+    phone: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const validateForm = () => {
+    let valid = true;
+    let errors = { name: "", message: "", phone: "" };
+
+    if (!formData.name) {
+      errors.name = "Ваше имя обязательно для заполнения";
+      valid = false;
+    }
+    if (!formData.message) {
+      errors.message = "Объяснение обязательно для заполнения";
+      valid = false;
+    }
+    if (!formData.phone) {
+      errors.phone = "Телефон обязателен для заполнения";
+      valid = false;
+    }
+
+    setErrors(errors);
+    return valid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Form submission logic here
+      console.log("Form submitted:", formData);
+      setModal(false);
+    }
+  };
+  const handleSubmit1 = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // Form submission logic here
+      console.log("Form submitted:", formData);
+      setButtonText("Отправлено");
+      // Reset form or additional actions if needed
+      setFormData({ name: "", phone: "" });
+    }
+  };
 
     return (
         <PageWrapper>
@@ -56,63 +140,68 @@ const Registration = () => {
                 <h3 className='text-[50px] font-bold mb-10'>
                     Регистрация
                 </h3>
-                <form onSubmit={handleSubmit} className='flex flex-col md:flex-row items-center md:items-start'>
-                    <div className='mr-0 md:mr-36 mb-10 md:mb-0'>
-                        <p className='text-[20px] mb-2'>Электронная почта <span className='text-red-500 font-bold'>*</span></p>
-                        <input
-                            className='w-full py-2 px-3 mb-5 rounded-md border-2'
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <p className='text-[20px] mb-2'>Пароль  <span className='text-red-500 font-bold'>*</span></p>
-                        <input
-                            className='w-full py-2 px-3 mb-5 rounded-md border-2'
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <p className='text-[20px] mb-2'>Повторите пароль <span className='text-red-500 font-bold'>*</span></p>
-                        <input
-                            className='w-full py-2 px-3 mb-5 rounded-md border-2'
-                            type="password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                        />
-                        <p className='text-[20px] mb-2'>Имя<span className='text-red-500 font-bold'>*</span></p>
-                        <input
-                            className='w-full py-2 px-3 mb-5 rounded-md border-2'
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                        <p className='text-[20px] mb-2'>Телефон <span className='text-red-500 font-bold'>*</span></p>
-                        <input
-                            className='w-full py-2 px-3 mb-8 rounded-md border-2'
-                            type="tel"
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
-                        />
-                        <div>
-                            <button
-                                type="submit"
-                                className='bg-[#19579e] w-full md:w-auto px-3 py-2 rounded-lg border-2 border-[#19579e] text-white font-bold'
-                            >
-                                Зарегистрироваться
-                            </button>
-                        </div>
-                    </div>
-                    <div className='pr-0 md:pr-14 text-center md:text-start'>
-                        <p className='text-[20px] font-bold mb-3'>Также вы можете войти через:</p>
-                        <img src={Button} alt="" className='mb-3' />
-                        <div className='flex items-center justify-center md:justify-start'>
-                            <img className='w-[90px] h-10 md:w-auto mr-2 md:mr-5' src={Telegram} alt="" />
-                            <img className='w-[90px] h-10 md:w-auto mr-2 md:mr-5' src={wh} alt="" />
-                            <img className='w-[90px] h-10 md:w-auto' src={vk} alt="" />
-                        </div>
-                    </div>
-                </form>
-                {errorMessage && <p className="mt-4 text-red-600">{errorMessage}</p>}
+                <form onSubmit={handleSubmitInput}>
+              <ul>
+                <li className="mb-5">
+                  <form action="">
+                    <input
+                      data-aos="fade-up"
+                      required
+                      type="text"
+                      name="name"
+                      placeholder="Ваше имя"
+                      onChange={handleName}
+                      value={name}
+                      className="py-[20px] pr-[220px] mb-5 lg:mb-0 pl-5 rounded-lg text-black font-medium mr-6"
+                    />
+                    <input
+                      onChange={handlePhone}
+                      data-aos="fade-up"
+                      type="text"
+                      name="phone"
+                      placeholder="+7 (___) ___ __ __"
+                      value={phone}
+                      className="py-[20px] pr-[220px] mt-5 pl-5 rounded-lg text-black font-medium"
+                    />
+                  </form>
+                </li>
+                <li>
+                  <div className="flex items-center mb-5">
+                    <input
+                      id="privacy"
+                      checked={isCheckboxChecked}
+                      onChange={handleCheckboxChange}
+                      data-aos="fade-up"
+                      type="checkbox"
+                      className="mr-3 h-5 w-5 rounded-lg border-none"
+                    />
+                    <p
+                      data-aos="fade-up"
+                      className="text-[15px] font-medium text-[#868686]"
+                    >
+                      <Link data-aos="fade-up" to={"/FoydalanishSharti"}>
+                        Ознакомлен(а) с{" "}
+                      </Link>{" "}
+                      <u>пользовательским соглашением *</u>
+                    </p>
+                    {checkboxError && (
+                      <p className="text-red-500 text-sm">
+                        Пожалуйста, подтвердите согласие
+                      </p>
+                    )}
+                  </div>
+                </li>
+                <li>
+                  <button
+                    data-aos="fade-up"
+                    type="submit"
+                    className="bg-[#79c701] py-6 rounded-lg px-7 text-white text-[20px] font-semibold"
+                  >
+                    Заказать звонок
+                  </button>
+                </li>
+              </ul>
+            </form>
             </div>
         </div>
         </PageWrapper>

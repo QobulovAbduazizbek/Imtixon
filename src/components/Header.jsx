@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Arrowd from "../img/Arrowd.png";
+import axios from "axios";
+import AOS from 'aos';
 import {
   Popover,
   PopoverHandler,
@@ -166,11 +168,11 @@ const Header = () => {
                 onMouseLeave={handleClose}
                 className="relative"
               >
-                <Link to="/projects">
+                <Button>
                   <span className="py-3 px-5 border-2 border-green-500 hover:bg-[#79c701] hover:text-white duration-700 text-black rounded-md font-medium text-[16px] md:text-[20px]">
                     Проекты
                   </span>
-                </Link>
+                </Button>
                 {down && (
                   <div
                     onMouseMove={handleOpen}
