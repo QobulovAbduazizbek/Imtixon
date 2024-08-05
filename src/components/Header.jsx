@@ -331,7 +331,7 @@ const Header = () => {
                 <PopoverHandler>
                   <Link to={'#'}>
                     <div className="bg-[#79c701] hover:bg-[#97d23a] duration-500 px-5 py-3 rounded-lg">
-                      <span className="font-medium">Меню</span>
+                      <span className=" font-medium">Меню</span>
                     </div>
                   </Link>
                 </PopoverHandler>
