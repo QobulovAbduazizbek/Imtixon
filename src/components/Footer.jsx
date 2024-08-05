@@ -50,39 +50,39 @@ const Footer = () => {
       <div className='w-full max-w-base pt-20 mx-auto px-5'>
         <ul className='w-full max-w-base mx-auto pb-16 px-5 flex flex-col md:flex-row md:flex-wrap items-start justify-between'>
           <li className='mb-10 md:mb-0 w-full md:w-1/2 lg:w-1/3'>
-            <h3 className='text-white font-medium text-[24px] md:text-[30px] mb-5' data-aos="fade-up">Строительная компания</h3>
-            <p className='text-[#acacac] text-[16px] md:text-[20px]' data-aos="fade-up">ИНН 780621518596</p>
-            <p className='text-[#acacac] text-[16px] md:text-[20px] mb-5' data-aos="fade-up">ОГРНИП 31878470038539</p>
-            <Link onClick={() => setModal(true)} className='text-[#45ca39] text-[16px] md:text-[20px]' data-aos="fade-up">Бесплатная консультация</Link>
+            <h3 className='text-white font-medium text-[24px] md:text-[30px] mb-5'>Строительная компания</h3>
+            <p className='text-[#acacac] text-[16px] md:text-[20px]'>ИНН 780621518596</p>
+            <p className='text-[#acacac] text-[16px] md:text-[20px] mb-5'>ОГРНИП 31878470038539</p>
+            <Link onClick={() => setModal(true)} className='text-[#45ca39] text-[16px] md:text-[20px]'>Бесплатная консультация</Link>
             <hr className='w-[190px] md:w-[245px] border-y-2 mb-5 border-[#45ca39]' />
             <div className='flex items-center'>
-              <Link><img className='w-[40px] md:w-[70px] hover:-translate-y-3 duration-700' data-aos="fade-up" src={vk} alt="" /></Link>
-              <Link><img className='w-[30px] md:w-[49px] hover:-translate-y-3 duration-700' data-aos="fade-up" src={yandex} alt="" /></Link>
-              <Link><img className='w-[35px] md:w-[65px] hover:-translate-y-3 duration-700' data-aos="fade-up" src={wh} alt="" /></Link>
-              <Link><img className='w-[35px] md:w-[65px] hover:-translate-y-3 duration-700' data-aos="fade-up" src={Telegram} alt="" /></Link>
+              <Link><img className='w-[40px] md:w-[70px] hover:-translate-y-3 duration-700' src={vk} alt="" /></Link>
+              <Link><img className='w-[30px] md:w-[49px] hover:-translate-y-3 duration-700' src={yandex} alt="" /></Link>
+              <Link><img className='w-[35px] md:w-[65px] hover:-translate-y-3 duration-700' src={wh} alt="" /></Link>
+              <Link><img className='w-[35px] md:w-[65px] hover:-translate-y-3 duration-700' src={Telegram} alt="" /></Link>
             </div>
           </li>
           <li className='mb-10 md:mb-0 w-full md:w-1/2 lg:w-1/3'>
-            <h3 className='text-white font-medium text-[24px] md:text-[30px] mb-5' data-aos="fade-up">Контакты</h3>
+            <h3 className='text-white font-medium text-[24px] md:text-[30px] mb-5'>Контакты</h3>
             <div className='flex items-center mb-3'>
-              <p className='text-white mr-3 text-[16px] md:text-[20px]' data-aos="fade-up">+7 (000) 123 54 98</p>
-              <img className='w-8 md:w-12' data-aos="fade-up" src={Telegram} alt="" />
+              <p className='text-white mr-3 text-[16px] md:text-[20px]'>+7 (000) 123 54 98</p>
+              <img className='w-8 md:w-12' src={Telegram} alt="" />
             </div>
             <div className='flex items-center mb-3'>
-              <p className='text-white mr-3 md:mr-6 text-[16px] md:text-[20px]' data-aos="fade-up">8 (000) 456 78 09</p>
-              <img className='w-8 md:w-11' data-aos="fade-up" src={wh} alt="" />
+              <p className='text-white mr-3 md:mr-6 text-[16px] md:text-[20px]'>8 (000) 456 78 09</p>
+              <img className='w-8 md:w-11' src={wh} alt="" />
             </div>
-            <p className='text-white text-[16px] md:text-[20px] mb-5' data-aos="fade-up">+7 (000) 456 78 09</p>
-            <p className='text-[#acacac] text-[14px] md:text-[16px]' data-aos="fade-up">E-mail:</p>
-            <label className='text-white text-[16px] md:text-[18px]' data-aos="fade-up">login@domain.ru</label>
+            <p className='text-white text-[16px] md:text-[20px] mb-5'>+7 (000) 456 78 09</p>
+            <p className='text-[#acacac] text-[14px] md:text-[16px]'>E-mail:</p>
+            <label className='text-white text-[16px] md:text-[18px]'>login@domain.ru</label>
             <hr className='w-[140px] border-spacing-y-1.5' />
           </li>
           <li className='w-full lg:w-1/3'>
-            <h3 className='text-white font-medium text-[24px] md:text-[30px] mb-5' data-aos="fade-up">Наш офис</h3>
+            <h3 className='text-white font-medium text-[24px] md:text-[30px] mb-5'>Наш офис</h3>
             <p className='text-[#acacac]'>Адрес офиса:</p>
-            <p className='text-white text-[16px] md:text-[20px] mb-5' data-aos="fade-up">г. Москва, Ленинский проспект, дом</p>
-            <p className='text-[#acacac]' data-aos="fade-up">График работы:</p>
-            <p className='text-white text-[16px] md:text-[20px] data-aos="fade-up"'>
+            <p className='text-white text-[16px] md:text-[20px] mb-5'>г. Москва, Ленинский проспект, дом</p>
+            <p className='text-[#acacac]'>График работы:</p>
+            <p className='text-white text-[16px] md:text-[20px]'>
               Пн-Пт с 9:00 до 18:00<br />
               Суббота с 10:00 до 17:00<br />
               Воскресенье - выходной
@@ -94,8 +94,8 @@ const Footer = () => {
           <hr className='border-[#535252] border-spacing-y-1.5' />
         </div>
         <div className='flex flex-col md:flex-row items-center justify-between pb-5'>
-          <p className='text-[#acacac] text-[14px] md:text-[16px] mb-3 md:mb-0' data-aos="fade-up">Copyright © 2022 - 2024 Название компании</p>
-          <p className='text-[#acacac] text-[14px] md:text-[16px]' data-aos="fade-up">Поддержка. <u>Разработка сайтов</u> в Megagroup.</p>
+          <p className='text-[#acacac] text-[14px] md:text-[16px] mb-3 md:mb-0'>Copyright © 2022 - 2024 Название компании</p>
+          <p className='text-[#acacac] text-[14px] md:text-[16px]'>Поддержка. <u>Разработка сайтов</u> в Megagroup.</p>
         </div>
       </div>
       {modal && (

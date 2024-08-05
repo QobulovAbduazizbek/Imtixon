@@ -9,15 +9,15 @@ const Maqolalar = () => {
   return (
     <PageWrapper>
     <div className='bg-white'>
-      <div className='w-full max-w-screen-xl mx-auto pt-12 pb-5 px-5'>
-        <div className='w-full max-w-screen-xl mx-auto pt-12 pb-[100px] px-5'>
-          <div className='flex items-center pt-10 mb-7'>
+      <div className='w-full max-w-screen-xl mx-auto pb-5 px-5'>
+        <div className='w-full max-w-screen-xl mx-auto mb-7 px-5'>
+          <div className='flex items-center pt-10 mb-5'>
             <Link to={'/'} className="text-[#6cd16c] text-[16px]">
               <u>Главная</u><span className='mx-1'>/</span>
             </Link>
             <p className='text-[#a5a3a3]'>Статьи</p>
           </div>
-          <h3 className='text-[50px] font-bold mb-10'>Статьи</h3>
+          <h3 className='text-[50px] font-bold '>Статьи</h3>
         </div>
         <ul className="space-y-5">
           {/* 1 */}

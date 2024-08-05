@@ -26,6 +26,7 @@ import Maqolalar from './pages/Maqolalar'
 import Kontakt from './pages/Kontakt'
 import QurilishniKechiktirish from './pages/QurilishniKechiktirish'
 import PageNoteFound from './pages/PageNoteFound'
+import Page from './pages/Page'
 
 
 const App = () => {
@@ -55,6 +56,7 @@ const App = () => {
         <Route path='/RoyxatdanOt' element={<RoyxatdanOt/>}/>
         <Route path='/BizHaqimizda' element={<BizHaqimizda/>}/>
         <Route path='*' element={<PageNoteFound/>}/>
+        <Route path='page' element={<Page/>}/>
 
 
 
