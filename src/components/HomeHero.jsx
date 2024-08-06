@@ -132,7 +132,7 @@ const HomeHero = () => {
 
   const CustomNextArrow = ({ onClick }) => (
     <div
-      className="w-16 h-16  bg-gray-600 mt-20 mr-10 opacity-70 rounded-2xl absolute top-1/2 right-5 flex items-center justify-center z-10 hover:bg-[#63b700] cursor-pointer"
+      className="w-16 h-16  bg-gray-600 mt-36 mr-10 opacity-70 rounded-2xl absolute top-1/2 right-5 flex items-center justify-center z-10 hover:bg-[#63b700] cursor-pointer"
       onClick={onClick}
     >
       <img className="w-8 h-8" src={arrow} alt="Next" />
@@ -141,7 +141,7 @@ const HomeHero = () => {
 
   const CustomPrevArrow = ({ onClick }) => (
     <div
-      className="w-16 h-16 bg-gray-600 mt-20 mr-10  opacity-70 rounded-2xl absolute top-1/2 right-24 flex items-center justify-center z-10 hover:bg-[#63b700] cursor-pointer"
+      className="w-16 h-16 bg-gray-600 mt-36 mr-10  opacity-70 rounded-2xl absolute top-1/2 right-24 flex items-center justify-center z-10 hover:bg-[#63b700] cursor-pointer"
       onClick={onClick}
     >
       <img className="w-8 h-8 rotate-180" src={arrow} alt="Prev" />
