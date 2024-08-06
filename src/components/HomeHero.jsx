@@ -188,52 +188,53 @@ const HomeHero = () => {
   return (
     <div className="w-full flex flex-col items-center py-0 px-0 relative">
       <div className="w-full h-full bg-white relative">
-        <Slider {...settings} className="w-full">
-          <div className="relative w-full h-[80vh]">
-            <img className="w-full h-full object-cover" src={opaxon} alt="Opaxon" />
-            <div className="absolute inset-0 bg-black opacity-20"></div>
-            <div
-              data-aos="fade-up"
-              className="absolute inset-0 flex flex-col w-full max-w-[1400px] mx-auto px-5 pb-20 justify-center items-center text-white text-center md:items-start md:ml-20"
-            >
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[30px] md:leading-[46px] break-words text-center md:text-left">
-                Остекление балконов со<br /> скидкой 30%
-              </h3>
-              <p className="flex text-lg leading-[25px] font-medium mt-5">
-                При заказе комплексной услуги под ключ
-              </p>
-              <Link
-                onClick={() => setModal(true)}
-                className="bg-[#79c701] px-4 mt-5 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md cursor-pointer"
-              >
-                Расчёт стоимости
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative w-full h-[80vh]">
-            <img className="w-full h-full object-cover" src={ayiqcha} alt="Ayiqcha" />
-            <div className="absolute inset-0 bg-black opacity-20"></div>
-            <div
-              data-aos="fade-up"
-              className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4 md:items-start md:ml-20"
-            >
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[30px] md:leading-[46px] break-words text-center md:text-left">
-                <span>Сделаем всё под ключ:</span>
-              </h3>
-              <p className="text-lg leading-[25px] font-medium mt-5">
-                от производства до установки за 5 дней
-              </p>
-              <Link
-                onClick={() => setModal(true)}
-                className="bg-[#79c701] px-4 mt-5 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md cursor-pointer"
-              >
-                Расчёт стоимости
-              </Link>
-            </div>
-          </div>
-        </Slider>
+  <Slider {...settings} className="w-full">
+    <div className="relative w-full h-[80vh]">
+      <img className="w-full h-full object-cover" src={opaxon} alt="Opaxon" />
+      <div className="absolute inset-0 bg-black opacity-20"></div>
+      <div
+        data-aos="fade-up"
+        className="absolute inset-0 flex flex-col w-full max-w-[1400px] mx-auto px-5 pb-20 justify-center items-center text-white text-center md:items-start md:ml-20"
+      >
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[30px] md:leading-[46px] break-words text-center md:text-left">
+          Остекление балконов со<br /> скидкой 30%
+        </h3>
+        <p className="text-lg leading-[25px] font-medium mt-5">
+          При заказе комплексной услуги под ключ
+        </p>
+        <Link
+          onClick={() => setModal(true)}
+          className="bg-[#79c701] px-4 mt-5 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md cursor-pointer"
+        >
+          Расчёт стоимости
+        </Link>
       </div>
+    </div>
+
+    <div className="relative w-full h-[80vh]">
+      <img className="w-full h-full object-cover" src={ayiqcha} alt="Ayiqcha" />
+      <div className="absolute inset-0 bg-black opacity-20"></div>
+      <div
+        data-aos="fade-up"
+        className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4 md:items-start md:ml-20"
+      >
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-[30px] md:leading-[46px] break-words text-center md:text-left">
+          <span>Сделаем всё под ключ:</span>
+        </h3>
+        <p className="text-lg leading-[25px] font-medium mt-5">
+          от производства до установки за 5 дней
+        </p>
+        <Link
+          onClick={() => setModal(true)}
+          className="bg-[#79c701] px-4 mt-5 py-3 sm:px-5 sm:py-4 md:px-5 md:py-6 text-[14px] sm:text-[16px] md:text-[18px] font-bold rounded-md cursor-pointer"
+        >
+          Расчёт стоимости
+        </Link>
+      </div>
+    </div>
+  </Slider>
+</div>
+
       {modal && (
         <div
           id="modal-background"
